@@ -4,7 +4,7 @@ import Channel from './Channel'
 
 function Channels() {
     return (
-        <div>
+        <div className="Channels">
             Channels
             <Channel title={'Capstone Project'}/>
             <Channel title={'Full Stack'}/>

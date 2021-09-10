@@ -1,4 +1,10 @@
 .TitleBar {
     justify-content: space-between;
     display:flex;
+    background-image: linear-gradient(#19059d, #c202d3);
+    
+}
+
+.Logo {
+    max-width: 128px;
 }

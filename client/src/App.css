@@ -4,7 +4,7 @@
   min-width: 100vw;
   min-height: 100vh;
   justify-content: space-evenly;
-  color: chartreuse;
+  
   background-color: black;
   
 }
@@ -12,6 +12,6 @@
 .Body {
   display: flex;
   min-width: 100vw;
-  justify-content: space-evenly;
+  justify-content: space-between;
   min-height: 100vh;
 }

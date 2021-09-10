@@ -1,4 +1,6 @@
 .Channels {
     min-height: 100vh;
     flex: 0.2;
+    background-image: linear-gradient(#c202d3, #19059d);
+    
 }
