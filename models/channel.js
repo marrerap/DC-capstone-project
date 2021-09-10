@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Channel.hasMany(models.User)
+      Channel.hasMany(models.Message)
     }
   };
   Channel.init({
