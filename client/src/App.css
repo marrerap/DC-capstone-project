@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  margin: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  justify-content: space-evenly;
+  color: chartreuse;
+  background-color: black;
+  
+}
+
+.Body {
+  display: flex;
+  min-width: 100vw;
+  justify-content: space-evenly;
+  min-height: 100vh;
+}
