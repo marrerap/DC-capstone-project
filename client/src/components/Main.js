@@ -6,10 +6,10 @@ import MessageInput from './MessageInput'
 
 function Main() {
     return (
-        <div>
-            <Header className="Header" />
-            <Feed className="Feed"/>
-            <MessageInput className="MessageInput"/>
+        <div className="MainDiv row">
+            <div><Header className="Header" /></div>
+            <div><Feed className="Feed "/></div>
+            <div><MessageInput className="MessageInput "/></div>
         </div>
     )
 }

@@ -1,0 +1,17 @@
+.Channel {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+.Channel:hover {
+    background-color: #5e0fff;
+    border-radius: 20px;
+    margin: 0 20px 0 20px;
+    cursor:pointer;
+}
+

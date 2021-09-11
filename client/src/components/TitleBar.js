@@ -1,12 +1,13 @@
 import React from 'react'
 import '../componentcss/TitleBar.css'
+import Logo from '../images/LogoSMAC.png' 
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 function TitleBar() {
     return (
         <div className="TitleBar">
-            <img src="" alt='logo' />
-            <span>Cool Dev App Name</span>
-            <img src="" alt='user' />
+            <img className="Logo" src={Logo} alt='logo' />
+            <AccountCircleIcon className="AccountCircleIcon"/>
         </div>
     )
 }
