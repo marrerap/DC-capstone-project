@@ -5,10 +5,9 @@ import React from 'react'
 function Header() {
 
     // temporary define
-    const title = 'Capstone Project'
+    const title = 'S.M.A.C. Chat'
     return (
         <div>
-            Header
             <p>{title}</p>
         </div>
     )

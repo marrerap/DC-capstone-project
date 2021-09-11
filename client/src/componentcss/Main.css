@@ -1,4 +1,13 @@
 .Main {
     min-height: 100vh;
-    flex: 0.5;
+    flex: 0.4;
+    display: flex;
+}
+.SpacerDiv {
+    flex: 1;
+}
+
+.MainDiv {
+    display: flex;
+    align-content:space-between;
 }

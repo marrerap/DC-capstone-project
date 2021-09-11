@@ -3,6 +3,7 @@ import Channels from './components/Channels';
 import Main from './components/Main';
 import TitleBar from './components/TitleBar';
 import Users from './components/Users';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

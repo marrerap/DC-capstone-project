@@ -1,0 +1,14 @@
+.MessageInput {
+    position: absolute;
+    bottom: 0;
+}
+
+.button.postbutton {
+    color: #fff;
+    background-color: #c202d3;
+}
+
+.button.postbutton:hover {
+    background-color: #5e0fff;
+    color: #fff
+}

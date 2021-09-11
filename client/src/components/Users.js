@@ -3,8 +3,8 @@ import '../componentcss/Users.css'
 
 function Users() {
     return (
-        <div>
-            Users
+        <div className="Users">
+            <h2>Users</h2>
         </div>
     )
 }

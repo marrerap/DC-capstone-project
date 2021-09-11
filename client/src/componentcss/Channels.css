@@ -1,6 +1,8 @@
 .Channels {
     min-height: 100vh;
-    flex: 0.2;
-    background-image: linear-gradient(#c202d3, #19059d);
-    
+    flex: 0.4;
+    background-image: linear-gradient(#c102d3b1, 70%, #19059d);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 10px #19059d;
+    margin-left: 25px;
 }

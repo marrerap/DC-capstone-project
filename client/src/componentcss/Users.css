@@ -1,4 +1,8 @@
 .Users {
     min-height: 100vh;
-    flex: 0.3;
+    flex: .4;
+    background-image: linear-gradient( #c102d3b1, 70%, #19059d );
+    border-radius: 10px;
+    margin-right: 60px;
+    box-shadow: 0px 0px 10px 10px #19059d;
 }
