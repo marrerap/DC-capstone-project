@@ -51,7 +51,7 @@ function LoginPage(props) {
                         <img src={Mentorship} alt="SMAC Overflow Mentorship" className="login__img"></img>
                     </div>
                     <form className="form">
-                        <legend className="col-md-12 mb-3 Register login__text"> Sign In</legend>
+                        <legend className="col-md-12 mb-3 Register login__text"> Sign In </legend>
                         <div className="form-row">
                             <div className="col-md-12 mb-3">
                                 <input type="email" className="login__form-control" id="validationDefault01" title="Please Enter Your E-Mail" placeholder=" E-Mail" onChange={(e) => setEmail(e.target.value)} required />
@@ -60,7 +60,7 @@ function LoginPage(props) {
                                 <input type="password" className="login__form-control" id="validationDefault02" title="Please Enter Your Password" placeholder=" Password" onChange={(e) => setPassword(e.target.value)} required />
                             </div>
                             <a href="/register"><p className="forgot__password" title="Register A New User">Forgot Password?</p></a>
-                            <button className="btn login__button col-md-12 mb-3" type="submit" onClick={(e) => { handleLogin(e) }} title="Sign In" > Sign in </button>
+                            <button className="btn login__button col-md-12 mb-3" type="submit" onClick={(e) => { handleLogin(e) }} title="Sign In" > Sign In </button>
                         </div>
                     </form>
                 </div>
