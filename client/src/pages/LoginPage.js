@@ -1,5 +1,5 @@
 import React from 'react'
-import '../componentcss/Login.css'
+import '../componentcss/LoginPage.css'
 import Logo from '../images/LogoSMAC.png'
 import Mentorship from '../images/visit-arc.svg'
 import { useState } from 'react'

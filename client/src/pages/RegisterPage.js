@@ -1,14 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
 import Logo from '../images/LogoSMAC.png'
-import '../componentcss/Login.css'
+import '../componentcss/LoginPage.css'
 import { useDispatch } from 'react-redux'
 import { actionCreateUser } from '../redux/actions/user'
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import "../firebase";
 import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
-import '../componentcss/Register.css'
+import '../componentcss/RegisterPage.css'
 import { Modal, Button, Dropdown } from 'react-bootstrap'
 
 
