@@ -1,0 +1,87 @@
+.login__page {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image: linear-gradient(#19059d, #c202d3);
+}
+
+a {
+    text-decoration:none;
+    color:#fff;
+}
+
+a:hover {
+    color: #c202d3;
+    text-decoration: none;
+}
+
+.login__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 20px 0px 20px;
+    
+}
+
+.login__header > div:hover {
+    text-decoration: none;
+}
+
+
+.register__btn {
+    text-decoration: none;
+    background-color: #19059d00;
+    color: #fff;
+    border-radius: 10px;
+    min-height: 40px;
+    min-width: 100%;
+    border: none;
+}
+
+.register__btn:hover{
+    color: #c202d3;
+}
+
+.login__body{
+    display:flex;
+    justify-content: space-around;
+    
+}
+
+.login__picture {
+    flex: 0.3;
+}
+
+.form {
+    flex: 0.4;
+    
+}
+
+.login__button {
+    background-color: #19059daa;
+    min-height: 40px;
+    min-width: 350px;
+    max-width: 350px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.login__button:hover {
+    color:#c202d3;
+}
+
+.login__form-control {
+    min-height: 40px;
+    min-width: 350px;
+    max-width: 350px;
+    border-radius: 10px;
+}
+
+.login__form-control::selection {
+    color: #fff;
+    background-color: #c202d3;
+}
+
+.login__form-control:focus{
+    outline: 2px solid #fff; 
+}
