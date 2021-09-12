@@ -1,19 +1,37 @@
 import './App.css';
-import Channels from './components/Channels';
-import Main from './components/Main';
-import TitleBar from './components/TitleBar';
-import Users from './components/Users';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import ChatPage from './pages/ChatPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+
 
 function App() {
   return (
     <div className="App">
-      <TitleBar />
-      <div className="Body">
-        <Channels className="Channels" />
-        <Main className="Main" />
-        <Users className="Users" />
-      </div>
+      <Router>
+        <Switch> 
+          
+          <Route exact path="/">
+            <LoginPage />
+          </Route>
+
+          <Route path="/register">
+            <RegisterPage />
+          </Route>
+
+          <Route path="/chat" >
+            <ChatPage/>
+          </Route>
+
+          <Route path="*">
+            <Redirect to="/">
+            {/* Redirect to homepage like so */}
+            </Redirect>
+          </Route>
+
+        </Switch> 
+      </Router>
     </div>
   );
 }

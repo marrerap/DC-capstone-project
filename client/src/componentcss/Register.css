@@ -1,0 +1,65 @@
+.register__page {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image: linear-gradient(#19059d, #c202d3);
+    
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.form-row {
+    max-width: 80%;
+    
+}
+
+.form-control::selection {
+    color: #fff;
+    background-color: #c202d3;
+}
+
+.input__label{
+    min-height: 40px;
+    min-width: 350px;
+    max-width: 350px;
+    border-radius: 10px;
+    
+}
+
+.register__button {
+    background-color: #19059d;
+    color: #fff;
+    min-height: 40px;
+    min-width: 350px;
+    max-width: 350px;
+    border-radius: 10px;
+}
+
+.register__button:hover{
+    color: #c202d3;
+}
+
+.Sign__In__link:hover {
+    color: #19059d
+}
+
+.Dropdown {
+    background-color: #19059d;
+    color: #fff;
+    min-height: 40px;
+    min-width: 350px;
+    max-width: 350px;
+    border-radius: 10px;
+}
+
+.Dropdown:hover{
+    color: #c202d3;
+    background-color: #19059d;
+}
+
+
