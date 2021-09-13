@@ -3,9 +3,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const db = require('./models')
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const store = new SequelizeStore({ db: db.sequelize })
-store.sync()
+// const SequelizeStore = require('connect-session-sequelize')(session.Store);
+// const store = new SequelizeStore({ db: db.sequelize })
+// store.sync()
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
