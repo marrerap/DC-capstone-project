@@ -1,12 +1,12 @@
 const defaultState = []
 
-export function posts (state = defaultState, action) {
+export function messages (state = defaultState, action) {
     switch(action.type) {
-        case 'ADD_POST':
+        case 'ADD_MESSAGE':
             return [action.array, ...state]
         
-        case 'SET_POSTS':
-            return action.posts
+        case 'SET_MESSAGES':
+            return action.messages
 
         default:
             return state

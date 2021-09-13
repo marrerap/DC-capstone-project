@@ -9,7 +9,7 @@ import "../firebase";
 import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import '../componentcss/RegisterPage.css'
-import { Modal, Button, Dropdown } from 'react-bootstrap'
+import { Modal, Button, Form } from 'react-bootstrap'
 
 
 const auth = getAuth();
@@ -21,16 +21,18 @@ function RegisterPage() {
     const [lname, setLname] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [mentor, setMentor] = useState(false)
     const [user, setUser] = useState({})
     const dispatch = useDispatch()
     function redirect_Login() {
         var tID = setTimeout(function () {
-            window.location.href = "/";
+            window.location.href = "/login";
             window.clearTimeout(tID);
             // clear time out.
         }, 1000);
     }
 
+    // Modal Popup on registration
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
     const handleClose = () => {
@@ -52,6 +54,7 @@ function RegisterPage() {
                     lname: lname,
                     name: fname + ' ' + lname,
                     email: email,
+                    mentor: mentor
                 })
                 setUser({
                     id: userCredential.user.uid,
@@ -59,6 +62,7 @@ function RegisterPage() {
                     lname: lname,
                     name: fname + ' ' + lname,
                     email: email,
+                    mentor: mentor
                 })
 
                 dispatch(actionCreateUser(user))
@@ -81,7 +85,7 @@ function RegisterPage() {
             </div >
             <br />
             <div>
-                <h2 className="mb-4 Register register__text text-center">Mentorship. <br /> For Devs. By Devs. <br/> Become A S.M.A.C.'er </h2>
+                <h2 className="mb-4 Register register__text text-center">Mentorship. <br /> For Devs. By Devs. <br /> Become A S.M.A.C.'er </h2>
             </div>
             {/* Register Body Form */}
             <div className="profile__body" >
@@ -101,7 +105,7 @@ function RegisterPage() {
                                     <input type="text" className="form-control" id="validationDefault02" onChange={(e) => setLname(e.target.value)} required />
                                 </div>
                             </div>
-                            
+
                             <div className="form-row">
                                 <div className="col-md-12 mb-3">
                                     <label className="input__label">E-Mail</label>
@@ -114,16 +118,16 @@ function RegisterPage() {
                                     <input type="password" className="form-control" id="validationDefault05" minLength="6" onChange={(e) => setPassword(e.target.value)} required />
                                 </div>
                             </div>
-                            <Dropdown className="Dropdown">
-                                <Dropdown.Toggle className="Dropdown" id="dropdown-basic">
-                                    Choose An Account Status
-                                </Dropdown.Toggle>
+                            <div className="form-row">
+                                <div className="col-md-12 mb-3">
+                                    <Form.Select onChange={(e) => setMentor(e.target.value)} aria-label="Default select example" className="Dropdown">
+                                        <option>Select An Account Status</option>
+                                        <option value="true">Register As A Mentor - I Want To Help </option>
+                                        <option value="false">Register As A Mentee - I Need Help</option>
+                                    </Form.Select>
+                                </div>
+                            </div>
 
-                                <Dropdown.Menu>
-                                    <Dropdown.Item href="#/action-1">Register As A Mentor</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-2">Register As A Mentee</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
                             <br />
                             <label className="input__label text-center mb-3">By clicking Register, you agree to abide by the Terms & Conditions of S.M.A.C. Overflow</label>
 

@@ -62,7 +62,7 @@
 }
 
 .register__button {
-    background-color: #19059d;
+    background-color: #19059daa;
     color: #fff;
     min-height: 40px;
     min-width: 350px;
@@ -79,7 +79,7 @@
 }
 
 .Dropdown {
-    background-color: #19059d;
+    background-color: #19059daa;
     color: #fff;
     min-height: 40px;
     min-width: 350px;
@@ -89,7 +89,7 @@
 
 .Dropdown:hover{
     color: #c202d3;
-    background-color: #19059d;
+    background-color: #19059daa;
 }
 
 
