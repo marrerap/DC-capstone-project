@@ -10,20 +10,21 @@ module.exports = {
       },
       content: {
         type: Sequelize.STRING,
+        
+      },
+      UserId: {
+        type: Sequelize.INTEGER,
         references: {
           model: 'Users',
           key: 'id'
         }
       },
-      UserId: {
+      ChannelId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Channels',
           key: 'id'
         }
-      },
-      ChannelId: {
-        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
