@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import ChatPage from './pages/ChatPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
-
+import ProtectedRoute from './components/ProtectedRoute'
+import './firebase'
 
 function App() {
   return (
@@ -20,9 +21,9 @@ function App() {
             <RegisterPage />
           </Route>
 
-          <Route path="/chat" >
+          <ProtectedRoute path="/chat">
             <ChatPage/>
-          </Route>
+          </ProtectedRoute>
 
           <Route path="*">
             <Redirect to="/">

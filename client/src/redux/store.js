@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from "redux";
-import { posts } from './reducers/posts'
+import { messages } from './reducers/messages'
 //  npm install @reduxjs/toolkit react-redux
 import { compose, applyMiddleware } from "@reduxjs/toolkit";
 import thunkMiddleware from 'redux-thunk'
@@ -8,7 +8,7 @@ import { user } from './reducers/user'
 
 // combines all existing reducers into a larger object
 const rootReducer = combineReducers({
-    posts,
+    messages,
     user
 })
 
