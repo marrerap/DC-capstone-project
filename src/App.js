@@ -6,8 +6,10 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ProtectedRoute from './components/ProtectedRoute'
 import './firebase'
+import { useSelector } from 'react-redux';
 
 function App() {
+  
   return (
     <div className="App">
       <Router>
@@ -22,13 +24,17 @@ function App() {
           </Route>
 
           <ProtectedRoute path="/chat">
-            <ChatPage/>
+            <ChatPage />
           </ProtectedRoute>
 
           <Route path="*">
             <Redirect to="/">
             {/* Redirect to homepage like so */}
             </Redirect>
+          </Route>
+
+          <Route path="/chat/:channelId">
+            <ChatPage />
           </Route>
 
         </Switch> 
