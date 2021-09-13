@@ -9,7 +9,7 @@ import { onSnapshot, collection, query, getDocs, where, orderBy } from "firebase
 import { store } from './redux/store'
 import { actionSetMessages } from './redux/actions/messages';
 import { actionCreateUser } from './redux/actions/user';
-
+import { actionSetChannels } from './redux/actions/channels';
 
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyBwS9rKFJTES-y6UQoL6g6SGTU_9SIMZVw",
@@ -54,27 +54,47 @@ onAuthStateChanged(auth, async user => {
     }
 });
 
-// // Queries posts from firebase DB
-// const q = query(collection(db, "messages"), orderBy("time", "desc"));
-// onSnapshot(q, (querySnapshot) => {
-//     const messages = [];
-//     querySnapshot.forEach((doc) => {
-//         messages.push(doc.data());
-//     });
-//     store.dispatch(actionSetMessages(messages));
+// Queries posts from firebase DB
+const q = query(collection(db, "messages"), orderBy("time", "desc"));
+onSnapshot(q, (querySnapshot) => {
+    const messages = [];
+    querySnapshot.forEach((doc) => {
+        messages.push(doc.data());
+    });
+    store.dispatch(actionSetMessages(messages));
+});
+
+
+
+(async () => {
+    const querySnapshot = await getDocs(query(collection(db, "messages"), orderBy("time", "desc")));
+    const messages = [];
+    querySnapshot.forEach((doc) => {
+        messages.push(doc.data());
+    });
+    store.dispatch(actionSetMessages(messages));
     
-// });
+})()
+
+const q2 = query(collection(db, "channels"));
+onSnapshot(q2, (querySnapshot) => {
+    const channels = [];
+    querySnapshot.forEach((doc) => {
+        channels.push(doc.data());
+    });
+    store.dispatch(actionSetChannels(channels));
+});
 
 
 
-// (async () => {
-//     const querySnapshot = await getDocs(query(collection(db, "messages"), orderBy("time", "desc")));
-//     const messages = [];
-//     querySnapshot.forEach((doc) => {
-//         messages.push(doc.data());
-//     });
-//     store.dispatch(actionSetMessages(messages));
+(async () => {
+    const querySnapshot = await getDocs(query(collection(db, "channels")));
+    const channels = [];
+    querySnapshot.forEach((doc) => {
+        channels.push(doc.data());
+    });
+    store.dispatch(actionSetChannels(channels));
     
-// })()
+})()
 
 export default firebase
