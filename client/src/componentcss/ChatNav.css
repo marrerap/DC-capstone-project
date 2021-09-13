@@ -1,4 +1,4 @@
-.TitleBar {
+.ChatNav {
     justify-content: space-between;
     display:flex;
     background-image: linear-gradient(#19059d, 55%, #c202d3);

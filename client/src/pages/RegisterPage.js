@@ -81,7 +81,7 @@ function RegisterPage() {
             </div >
             <br />
             <div>
-                <h2 className="mb-4 Register register__text text-center">Mentorship. <br /> For Devs. By Devs. </h2>
+                <h2 className="mb-4 Register register__text text-center">Mentorship. <br /> For Devs. By Devs. <br/> Become A S.M.A.C.'er </h2>
             </div>
             {/* Register Body Form */}
             <div className="profile__body" >
@@ -151,7 +151,7 @@ function RegisterPage() {
 
             </div>
             <div className="footer">
-                <p className="footer__text">2021 &#169; S.M.A.C. Overflow </p>
+                <p className="footer__text">2021 &#169; Suvd T, McKenna L, Andrew M, Chris H -- Overflow </p>
             </div>
 
         </div>

@@ -1,15 +1,15 @@
 import React from 'react'
-import '../componentcss/TitleBar.css'
+import '../componentcss/ChatNav.css'
 import Logo from '../images/LogoSMAC.png' 
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
-function TitleBar() {
+function ChatNav() {
     return (
-        <div className="TitleBar">
+        <div className="ChatNav">
             <img className="Logo" src={Logo} alt='logo' />
             <AccountCircleIcon className="AccountCircleIcon"/>
         </div>
     )
 }
 
-export default TitleBar
+export default ChatNav
