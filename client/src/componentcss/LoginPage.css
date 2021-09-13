@@ -3,7 +3,38 @@
     min-height: 100vh;
     flex-direction: column;
     background-image: linear-gradient(#19059d, #c202d3);
+    animation: fadeIn 2s;
+    -webkit-animation: fadeIn 2s;
+    -moz-animation: fadeIn 2s;
+    -o-animation: fadeIn 2s;
+    -ms-animation: fadeIn 2s;
 }
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
 
 a {
     text-decoration:none;
@@ -75,6 +106,8 @@ a:hover {
     min-width: 350px;
     max-width: 350px;
     border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .login__form-control::selection {
@@ -83,5 +116,5 @@ a:hover {
 }
 
 .login__form-control:focus{
-    outline: 2px solid #fff; 
+    outline: 2px solid #19059daa;
 }
