@@ -11,11 +11,13 @@ function Header(props) {
         return channel.id.includes(channelId);
       });
     console.log(filteredChannels)
-
+      if(!channelId){
+          return <div>Welcome,<br/> Please select a channel from the left!</div>
+      }
 
     return (
         <div>
-            <p>{filteredChannels[0].name}</p>
+            <p>{ filteredChannels[0].name }</p>
         </div>
     )
 }
