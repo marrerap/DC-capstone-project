@@ -39,7 +39,7 @@ function LoginPage(props) {
                 <div><a href="/" title="Sign In Page"><img className="header__img" src={Logo} alt=""></img></a></div>
                 <div><a href="/howitworks" title="How It Works">HOW IT WORKS</a></div>
                 <div><a href="/register" title="Become A Mentor">BECOME A MENTOR</a></div>
-                <div><a href="/register" title="Register A New User"><button className="register__btn" >SIGN UP</button></a></div>
+                <div><a href="/register" title="Register A New User"><button className="register__btn" >BECOME A MENTEE</button></a></div>
             </div >
 
             {/* Login Body */}
