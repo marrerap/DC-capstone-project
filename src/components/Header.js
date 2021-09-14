@@ -1,14 +1,21 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 
 
 
-function Header() {
+function Header(props) {
+    const channelId = props.channelId
+    const channels = useSelector(state => state.channels)
+    
+    const filteredChannels = channels.filter((channel) => {        
+        return channel.id.includes(channelId);
+      });
+    console.log(filteredChannels)
 
-    // temporary define
-    const title = 'S.M.A.C. Chat'
+
     return (
         <div>
-            <p>{title}</p>
+            <p>{filteredChannels[0].name}</p>
         </div>
     )
 }
