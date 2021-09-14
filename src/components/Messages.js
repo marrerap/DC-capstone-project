@@ -2,19 +2,27 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router'
 
-function Messages() {
+
+function Messages(props) {
+    const channelId = props.channelId
     const messages = useSelector(state => state.messages)
     // console.log(messages)
     
+    console.log(channelId)
+    
+    const filteredMessages = messages.filter((message) => {        
+        return message.ChannelId.includes(channelId);
+      });
+    // console.log(filteredMessages)
 
+
+    
     return (
         <div>
-           {messages.map((message) => {
-               const channelMessage = message.ChannelId._key.path.segments[6]
-        // if( channelMessage === id){
-        //     return message
-        // }
+           {filteredMessages.map((message) => {       
+       
         return <div>{message.content}</div>
+        
     })}
         </div>
     )

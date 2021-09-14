@@ -1,43 +1,43 @@
-import './App.css';
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-import ChatPage from './pages/ChatPage';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
-import ProtectedRoute from './components/ProtectedRoute'
-import './firebase'
-import { useSelector } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+import ChatPage from "./pages/ChatPage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import ProtectedRoute from "./components/ProtectedRoute";
+import "./firebase";
+import ChatPageChannel from "./pages/ChatPageChannel";
 
 function App() {
-  
   return (
     <div className="App">
       <Router>
-        <Switch> 
-          
+        <Switch>
           <Route exact path="/">
             <LoginPage />
           </Route>
 
-          <Route path="/register">
+          <Route exact path="/register">
             <RegisterPage />
           </Route>
 
-          <ProtectedRoute path="/chat">
+          <ProtectedRoute exact path="/chat">
             <ChatPage />
           </ProtectedRoute>
 
-          <Route path="*">
-            <Redirect to="/">
-            {/* Redirect to homepage like so */}
-            </Redirect>
+          <Route exact path="/chat/:channelId">
+            <ChatPageChannel />
           </Route>
 
-          <Route path="/chat/:channelId">
-            <ChatPage />
+          <Route exact path="*">
+            <Redirect to="/">{/* Redirect to homepage like so */}</Redirect>
           </Route>
-
-        </Switch> 
+        </Switch>
       </Router>
     </div>
   );

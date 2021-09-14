@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux'
 
 function Channels() {
     const channels = useSelector(state => state.channels)
-    console.log(channels)
+    // console.log(channels)
 
     return (
         <div className="Channels">
