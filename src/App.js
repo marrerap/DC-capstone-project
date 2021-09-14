@@ -12,6 +12,7 @@ import RegisterPage from "./pages/RegisterPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import "./firebase";
 import ChatPageChannel from "./pages/ChatPageChannel";
+import HowItWorks from "./pages/HowItWorks"
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
 
           <Route exact path="/register">
             <RegisterPage />
+          </Route>
+          <Route exact path="/howitworks">
+            <HowItWorks />
           </Route>
 
           <ProtectedRoute exact path="/chat">
