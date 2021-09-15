@@ -19,23 +19,20 @@ function ChatNav() {
             <a href="/howitworks" title="How It Works">HOW IT WORKS</a>
             {/* sign out button */}
             <button className="logout__button" title="Log Out User"
-                        
-                        onClick={() => {
-                            signOut(auth)
-                                .then(() => {
-                                    // Sign-out successful.
-                                    dispatch(actionCreateUser(null));
-                                    // Redirect('/')
-                                })
-                                .catch((error) => {
-                                    console.log(error);
-                                });
-                            
-                            
-                        }}
-                    >
-                        Log Out
-                    </button>
+                onClick={() => {
+                    signOut(auth)
+                        .then(() => {
+                            // Sign-out successful.
+                            dispatch(actionCreateUser(null));
+                            // Redirect('/')
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                        });
+                }}
+            >
+                Log Out
+            </button>
             <AccountCircleIcon className="AccountCircleIcon"/>
         </div>
     )

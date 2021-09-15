@@ -3,13 +3,16 @@ import { db } from "../../firebase";
 
 
 
-export function actionAddMessages (array) {
+export function actionAddMessage (message) {
     
     return async function(dispatch, getState) {
+        
+        const messageRef = await addDoc(collection(db, 'messages'), message)
         dispatch({
-            type: 'CREATE_MESSAGE'
+            type: 'ADD_MESSAGE', 
+            message: message
         })
-        await addDoc(collection(db, 'messages'), array)
+        
         
     }
 
