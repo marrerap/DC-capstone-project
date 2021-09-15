@@ -6,7 +6,7 @@ import '../componentcss/MessageInput.css'
 function MessageInput() {
     return (
         <div >
-            <InputGroup className="mb-3">
+            <InputGroup className="mb-3" >
                 <FormControl
                     placeholder="Post a message . . ."
                     aria-label="Message Input"
