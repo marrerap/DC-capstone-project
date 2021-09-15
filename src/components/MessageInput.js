@@ -14,7 +14,7 @@ function MessageInput() {
                     as="textarea"
                 />
                 <Button className="button postbutton" id="button-addon2">
-                    Post <SendIcon/>
+                    SEND <SendIcon/>
                 </Button>
             </InputGroup>
         </div>

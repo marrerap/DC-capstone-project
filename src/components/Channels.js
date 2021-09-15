@@ -11,17 +11,16 @@ function Channels() {
     // console.log(channels)
 
     return (
-        <div className="Channels">
-            <ListGroup>
+        <div >
+            <ListGroup className="Channels">
                 {channels.map((channel, id) => {
                     return  <Link key={id} className="Channel"
-                    // as={Link} 
-                    to={`/chat/${channel.id}`}>
+                                to={`/chat/${channel.id}`}>
                     <p className="ChannelName"><SupervisedUserCircleIcon className="SupervisedUserCircleIcon"/> {channel.name}</p>
                 </Link>
                 })}
             </ListGroup>
-            </div>
+        </div>
     )
 }
 

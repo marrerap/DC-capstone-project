@@ -1,4 +1,4 @@
-import '../componentcss/ChatPage.css';
+import '../componentcss/ChatPageChannel.css';
 import Channels from '../components/Channels';
 import Main from '../components/Main';
 import ChatNav from '../components/ChatNav';

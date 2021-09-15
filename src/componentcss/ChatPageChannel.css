@@ -35,8 +35,3 @@
     100% {opacity:1;}
 }
 
-.chatpage__Body{
-    display: flex;
-    justify-content: space-around;
-}
-
