@@ -24,10 +24,11 @@ function Message({message, time}) {
             <div className="message__header">
                 <Avatar className="Avatar message__avatar" />
                 <div className="message__info">
-                    <p className="message__name">{user.user.name} &#8226; {user.user.mentor? 'Mentor': 'Mentee'} </p>
-                    <p className="message__time">Posted <RelativeTime date={time}/></p>
+                    <p className="message__name">{user.user.name} </p>
+                    <p className="message__time">{user.user.mentor? 'Mentor': 'Mentee'}  &#8226;  Posted <RelativeTime date={time}/></p>
                 </div>
             </div>
+            <br/>
             <div className="message__body">
                 <p className="message__body">{message.content}</p>
             </div>

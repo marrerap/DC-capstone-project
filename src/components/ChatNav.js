@@ -5,6 +5,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { signOut, getAuth } from "firebase/auth";
 import { useDispatch } from 'react-redux'
 import { actionCreateUser } from '../redux/actions/user'
+import { Redirect } from 'react-router';
 
 function ChatNav() {
     const dispatch = useDispatch()
@@ -24,6 +25,7 @@ function ChatNav() {
                                 .then(() => {
                                     // Sign-out successful.
                                     dispatch(actionCreateUser(null));
+                                    Redirect('/')
                                 })
                                 .catch((error) => {
                                     console.log(error);
