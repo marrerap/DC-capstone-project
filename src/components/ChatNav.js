@@ -6,6 +6,8 @@ import { signOut, getAuth } from "firebase/auth";
 import { useDispatch } from 'react-redux'
 import { actionCreateUser } from '../redux/actions/user'
 import { Redirect } from 'react-router';
+import { Dropdown } from 'react-bootstrap';
+
 
 function ChatNav() {
     const dispatch = useDispatch()
@@ -18,22 +20,30 @@ function ChatNav() {
             <a href="/chat"><img className="Logo" src={Logo} alt='logo' /></a>
             <a href="/howitworks" title="How It Works">HOW IT WORKS</a>
             {/* sign out button */}
-            <button className="logout__button" title="Log Out User"
-                onClick={() => {
-                    signOut(auth)
-                        .then(() => {
-                            // Sign-out successful.
-                            dispatch(actionCreateUser(null));
-                            // Redirect('/')
-                        })
-                        .catch((error) => {
-                            console.log(error);
-                        });
-                }}
-            >
-                Log Out
-            </button>
-            <AccountCircleIcon className="AccountCircleIcon"/>
+
+
+            <Dropdown className="DropdownIcon">
+                <Dropdown.Toggle className="DropdownToggle" id="dropdown-basic">
+                    <AccountCircleIcon className="AccountCircleIcon"/>
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                    <Dropdown.Item onClick={() => {
+                            signOut(auth)
+                                .then(() => {
+                                    // Sign-out successful.
+                                    dispatch(actionCreateUser(null));
+                                    // Redirect('/')
+                                })
+                                .catch((error) => {
+                                    console.log(error);
+                                });                           
+                            
+                        }} >
+                            Log Out
+                        </Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+
         </div>
     )
 }

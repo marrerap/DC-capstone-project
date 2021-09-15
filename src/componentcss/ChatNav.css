@@ -18,7 +18,43 @@
 }
 
 .AccountCircleIcon {
-    min-width: 100px;
-    min-height: 100px;
-    margin-right: 25px;
+    min-width: 75px;
+    min-height: 75px;
+    /* margin-right: 25px; */
+}
+
+.DropdownIcon {
+    background-color: transparent; 
+}
+
+.btn-primary {
+    background-color: transparent;
+    border-color: transparent;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    border: none;
+    
+}
+
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+    padding: none;
+}
+
+.btn-check:focus+.btn, .btn:focus {
+    box-shadow: none;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+.DropdownToggle.btn-primary.dropdown-toggle:focus,
+.show>.DropdownToggle.btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+    background-color: transparent;
 }
