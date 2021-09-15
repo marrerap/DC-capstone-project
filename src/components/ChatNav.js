@@ -21,6 +21,7 @@ function ChatNav() {
             <a href="/howitworks" title="How It Works">HOW IT WORKS</a>
             {/* sign out button */}
 
+
             <Dropdown className="DropdownIcon">
                 <Dropdown.Toggle className="DropdownToggle" id="dropdown-basic">
                     <AccountCircleIcon className="AccountCircleIcon"/>
@@ -42,6 +43,7 @@ function ChatNav() {
                         </Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
+
         </div>
     )
 }

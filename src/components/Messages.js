@@ -12,7 +12,7 @@ function Messages(props) {
     console.log(channelId)
 
     const filteredMessages = messages.filter((message) => {
-        return message.ChannelId.includes(channelId);
+        return message.ChannelId.id === channelId;
     });
     // console.log(filteredMessages)
 
