@@ -3,7 +3,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import { getAuth, onAuthStateChanged } from '@firebase/auth';
-import { getFirestore, getDoc } from "firebase/firestore";
+import { getFirestore, getDoc, doc } from "firebase/firestore";
 import { initializeApp } from "firebase/app"
 import { onSnapshot, collection, query, getDocs, where, orderBy } from "firebase/firestore";
 import { store } from './redux/store'
@@ -25,13 +25,29 @@ export const auth = getAuth(firebaseApp);
 export const db = getFirestore(firebaseApp);
 
 
+// const docRef = doc(db, "users");
+// const docSnap = getDoc(docRef);
+
+// // if (docSnap.exists()) {
+// //     console.log("Document data:", docSnap.data());
+// // } else {
+// //   // doc.data() will be undefined in this case
+// //     console.log("No such document!");
+// // }
+
+
+
+
+
+
+
 // detect auth state
 // takes an argument of either the service returned from the getter 
 // function or some relevant container object
 
 onAuthStateChanged(auth, async user => {
     // Check for user status
-    
+
     if (user !== null) {
         // Create a reference to the users collection
         const usersRef = collection(db, "users");
@@ -41,10 +57,14 @@ onAuthStateChanged(auth, async user => {
 
         // Query the user that matches uid
         const querySnapshot = await getDocs(q);
-        
+
         // dispatch that user in actionCreateUser
         if (querySnapshot.size > 0) {
-            store.dispatch(actionCreateUser(querySnapshot.docs[0].data()));
+            const userRef = querySnapshot.docs[0]
+            const userdata = userRef.data()
+            userdata.refId =  userRef.id
+            store.dispatch(actionCreateUser(userdata));
+            
         } else {
             console.log("No such document!");
         }
@@ -77,7 +97,7 @@ onSnapshot(q, async (querySnapshot) => {
 //         messages.push(data);
 //     });
 //     store.dispatch(actionSetMessages(messages));
-    
+
 // })()
 
 
@@ -100,7 +120,7 @@ onSnapshot(q2, (querySnapshot) => {
         channels.push(doc.data());
     });
     store.dispatch(actionSetChannels(channels));
-    
+
 })()
 
 export default firebase
