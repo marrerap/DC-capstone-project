@@ -1,3 +1,6 @@
-.Feed {
-    
+.messagesFeed {
+    overflow: hidden;
+  overflow-y: scroll;
+  max-height: 75%;
 }
+

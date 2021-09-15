@@ -8,6 +8,7 @@
     border-color: #fff;
     text-align: left;
     
+    
 }
 
 .messages {
@@ -16,6 +17,7 @@
     flex: 0.4;
     margin-left: 25px;
     margin-right: 25px;
+    max-height: 75vh;
 }
 
 .message__outgoing {

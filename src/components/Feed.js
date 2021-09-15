@@ -8,7 +8,7 @@ function Feed() {
     const { channelId }  = useParams()
     // console.log(id)
     return (
-        <div>
+        <div className='messagesFeed'>
             {/* map function for messages beneath header */}
             <Messages channelId={channelId} />
 
