@@ -25,7 +25,7 @@ function ChatNav() {
                                 .then(() => {
                                     // Sign-out successful.
                                     dispatch(actionCreateUser(null));
-                                    Redirect('/')
+                                    // Redirect('/')
                                 })
                                 .catch((error) => {
                                     console.log(error);
