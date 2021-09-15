@@ -1,18 +1,18 @@
 import '../componentcss/ChatPage.css';
 import Channels from '../components/Channels';
-import Main from '../components/Main';
 import ChatNav from '../components/ChatNav';
 import Users from '../components/Users';
 import "bootstrap/dist/css/bootstrap.min.css";
+import OffCanvasChannels from '../components/OffCanvasChannels';
+import MainDashboard from '../components/MainDashboard';
 
 function ChatPage() {
     return (
         <div className="chat__page">
             <ChatNav />
-            <div className="Body">
-                <Channels className="Channels" />
-                <Main className="Main" />
-                <Users className="Users" />
+            <div className="Body row">
+                <MainDashboard className="Main col-12" />
+                <OffCanvasChannels className="col-12"/>
             </div>
         </div>
     );
