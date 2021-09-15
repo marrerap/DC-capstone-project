@@ -1,20 +1,18 @@
 .App {
   text-align: center;
   margin: 0;
-  min-width: 100vw;
-  min-height: 100vh;
   justify-content: space-evenly;
   background-color: black;
   color:#fff;
   padding: 10px;
+  height: 100vh;
 }
 
 
 
 .Body {
   display: flex;
-  min-width: 100vw;
   justify-content: space-between;
-  min-height: 100vh;
+  height: calc(100vh - 145px);
   padding-top: 10px;
 }

@@ -20,9 +20,7 @@ function Header(props) {
 
     return (
         <div>
-
             <p className="Header">{ filteredChannels[0]?.name } Help Channel</p>
-
         </div>
     )
 }

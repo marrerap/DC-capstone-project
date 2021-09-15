@@ -1,9 +1,10 @@
-import { Link } from '@material-ui/core';
+import { Link } from 'react-router-dom'
 import Button from '@restart/ui/esm/Button';
 import React, { useState } from 'react'
 import { ListGroup, Offcanvas } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
+import '../componentcss/OffCanvasMain.css'
 
 function OffCanvasChannels() {
     const channels = useSelector(state => state.channels)
@@ -17,21 +18,21 @@ function OffCanvasChannels() {
                 Launch
             </Button>
 
-            <Offcanvas show={show} onHide={handleClose}>
+            <Offcanvas className="OffCanvasMain" show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>Channels</Offcanvas.Title>
+                    <Offcanvas.Title className="Offcanvas-Title">Channels</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                 <div className="Channels">
-            {/* <ListGroup> */}
+            <ListGroup>
                 {channels.map((channel, id) => {
                     return  <Link key={id} className="Channel"
-                    // as={Link} 
-                    href={`/chat/${channel.id}`}>
+                    
+                    to={`/chat/${channel.id}`}>
                     <p className="ChannelName"><SupervisedUserCircleIcon className="SupervisedUserCircleIcon"/> {channel.name}</p>
                 </Link>
                 })}
-            {/* </ListGroup> */}
+            </ListGroup>
             </div>
                 </Offcanvas.Body>
             </Offcanvas>
