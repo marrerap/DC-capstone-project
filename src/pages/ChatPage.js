@@ -16,7 +16,7 @@ function ChatPage() {
 
             <br/>
             <div className="chatpage__Body">
-                <Channels className="Channels" />
+                {/* <Channels className="Channels" /> */}
                 <ChatMain className="ChatMain" />
                 {/* <Users className="Users" /> */}
 

@@ -1,13 +1,10 @@
 .chat__page {
     display: flex;
-    min-height: 100vh;
     flex-direction: column;
     background-image: linear-gradient(#19059d, #c202d3);
     animation: fadeIn 2s;
-    -webkit-animation: fadeIn 2s;
-    -moz-animation: fadeIn 2s;
-    -o-animation: fadeIn 2s;
-    -ms-animation: fadeIn 2s;
+    height: 100%;
+    
 }
 
 @keyframes fadeIn {
