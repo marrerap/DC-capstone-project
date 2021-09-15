@@ -14,7 +14,8 @@ function ChatNav() {
 
     return (
         <div className="ChatNav">
-            <img className="Logo" src={Logo} alt='logo' />
+            <a href="/chat"><img className="Logo" src={Logo} alt='logo' /></a>
+            <a href="/howitworks" title="How It Works">HOW IT WORKS</a>
             {/* sign out button */}
             <button className="logout__button" title="Log Out User"
                         

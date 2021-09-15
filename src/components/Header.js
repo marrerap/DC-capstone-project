@@ -9,15 +9,15 @@ function Header(props) {
     
     const filteredChannels = channels.filter((channel) => {        
         return channel.id.includes(channelId);
-      });
-    console.log(filteredChannels)
-      if(!channelId){
-          return <div>Welcome,<br/> Please select a channel from the left!</div>
-      }
+    });
+    // console.log(filteredChannels)
+    if(!channelId){
+    return <div>Welcome,<br/> Please select a channel from the left!</div>
+    }
 
     return (
         <div>
-            <p>{ filteredChannels[0].name }</p>
+            <p className="Header">{ filteredChannels[0].name } Help Channel</p>
         </div>
     )
 }

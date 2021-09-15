@@ -1,23 +1,35 @@
 import React from 'react'
-import '../componentcss/Post.css'
+import '../componentcss/Message.css'
 import { Avatar } from '@material-ui/core'
 import RelativeTime from "./RelativeTime"
-import PublicIcon from '@material-ui/icons/Public';
+import { useSelector } from 'react-redux';
 
 
 
-function Message({ChannelId, UserId, content, time}) {
+function Message({message, time}) {
+    const user = useSelector(state => state.user);
+    console.log(user)
+    console.log(message)
+    let cssClass = 'message';
+    if (user.user.id === message.user.id ) {
+        cssClass += " message__outgoing"
+    }
+
+
+
+
     return ( 
         
-        <div className="post">
-            <div className="post__header">
-                <Avatar className="post__avatar" />
-                <div className="post__info">
-                    <p className="post__time text-muted"><RelativeTime date={time}/> &#8226; <PublicIcon style={{ fontSize: 16 }}/></p>
+        <div className={cssClass}>
+            <div className="message__header">
+                <Avatar className="Avatar message__avatar" />
+                <div className="message__info">
+                    <p className="message__name">{user.user.name} &#8226; {user.user.mentor? 'Mentor': 'Mentee'} </p>
+                    <p className="message__time">Posted <RelativeTime date={time}/></p>
                 </div>
             </div>
-            <div className="post__body">
-                <p className="post__body">{content}</p>
+            <div className="message__body">
+                <p className="message__body">{message.content}</p>
             </div>
         </div>
     )

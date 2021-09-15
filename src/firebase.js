@@ -3,7 +3,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import { getAuth, onAuthStateChanged } from '@firebase/auth';
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, getDoc } from "firebase/firestore";
 import { initializeApp } from "firebase/app"
 import { onSnapshot, collection, query, getDocs, where, orderBy } from "firebase/firestore";
 import { store } from './redux/store'
@@ -31,7 +31,7 @@ export const db = getFirestore(firebaseApp);
 
 onAuthStateChanged(auth, async user => {
     // Check for user status
-    console.log(user)
+    
     if (user !== null) {
         // Create a reference to the users collection
         const usersRef = collection(db, "users");
@@ -56,26 +56,32 @@ onAuthStateChanged(auth, async user => {
 
 // Queries posts from firebase DB
 const q = query(collection(db, "messages"), orderBy("time", "desc"));
-onSnapshot(q, (querySnapshot) => {
+onSnapshot(q, async (querySnapshot) => {
     const messages = [];
-    querySnapshot.forEach((doc) => {
-        messages.push(doc.data());
+    querySnapshot.forEach(async (doc) => {
+        const data = doc.data();
+        const user = await (await getDoc(data.UserId)).data()
+        data.user = user
+        messages.push(data);
     });
     store.dispatch(actionSetMessages(messages));
 });
 
-
-
-(async () => {
-    const querySnapshot = await getDocs(query(collection(db, "messages"), orderBy("time", "desc")));
-    const messages = [];
-    querySnapshot.forEach((doc) => {
-        messages.push(doc.data());
-    });
-    store.dispatch(actionSetMessages(messages));
+// (async () => {
+//     const querySnapshot = await getDocs( query(collection(db, "messages"), orderBy("time", "desc")));
+//     const messages = [];
+//     await querySnapshot.forEach( async (doc) => {
+//         const data = doc.data();
+//         const user = await (await getDoc(data.UserId)).data()
+//         data.user = user
+//         messages.push(data);
+//     });
+//     store.dispatch(actionSetMessages(messages));
     
-})()
+// })()
 
+
+// Query Channels from DB
 const q2 = query(collection(db, "channels"));
 onSnapshot(q2, (querySnapshot) => {
     const channels = [];

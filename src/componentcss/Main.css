@@ -2,12 +2,17 @@
     min-height: 100vh;
     flex: 0.4;
     display: flex;
-}
-.SpacerDiv {
-    flex: 1;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 .MainDiv {
     display: flex;
     align-content:space-between;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.Header {
+    font-size: 32px;
 }
