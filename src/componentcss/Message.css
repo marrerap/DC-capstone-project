@@ -19,7 +19,7 @@
     flex: 0.4;
     margin-left: 25px;
     margin-right: 25px;
-    max-height: 75vh;
+    max-height: 100%;
 }
 
 .message__outgoing {

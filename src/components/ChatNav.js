@@ -16,13 +16,20 @@ function ChatNav() {
 
 
     return (
-        <div className="ChatNav">
-            <a href="/chat"><img className="Logo" src={Logo} alt='logo' /></a>
-            <a href="/howitworks" title="How It Works">HOW IT WORKS</a>
+        <div className="ChatNav row">
+            <div className='col-5' >
+                 <a href="/chat"><img className="Logo img-fluid" src={Logo} alt='logo' /></a>
+            </div>
+           
+            <div className='col-2'>
+                <a href="/howitworks" title="How It Works">HOW IT WORKS</a>
+            </div>
+            
+            
             {/* sign out button */}
 
-
-            <Dropdown className="DropdownIcon">
+            <div className='col-5' >
+                <Dropdown className="DropdownIcon">
                 <Dropdown.Toggle className="DropdownToggle" id="dropdown-basic">
                     <AccountCircleIcon className="AccountCircleIcon"/>
                 </Dropdown.Toggle>
@@ -43,6 +50,8 @@ function ChatNav() {
                         </Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
+            </div>
+            
 
         </div>
     )

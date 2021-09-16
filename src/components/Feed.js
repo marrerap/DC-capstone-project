@@ -10,7 +10,7 @@ function Feed() {
     return (
         <div className='messagesFeed'>
             {/* map function for messages beneath header */}
-            <Messages channelId={channelId} />
+            <Messages className='' channelId={channelId} />
 
         </div>
     )

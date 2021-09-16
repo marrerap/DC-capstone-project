@@ -9,8 +9,11 @@
 }
 
 .Logo {
+    display: flex;
     max-width: 128px;
-    margin-left: 25px;
+    width: 100%;
+    /* margin-left: 25px; */
+    ;
 }
 
 .UserAvatar{

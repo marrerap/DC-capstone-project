@@ -9,7 +9,7 @@ function ChatMain() {
             <p>Press Launch To Select A Help Channel</p>
             <OffCanvasChannels/>
             <br/>
-            <img src={Mentorship2} alt="SMAC Overflow Mentorship" className="ChatMain__img"></img>
+            <img src={Mentorship2} alt="SMAC Overflow Mentorship" className="ChatMain__img img-fluid"></img>
         </div>
     )
 }
