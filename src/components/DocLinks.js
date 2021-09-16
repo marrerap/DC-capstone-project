@@ -8,8 +8,7 @@ import { useSelector } from 'react-redux';
 
 function Docs() {
     const docLinks = useSelector(state => state.docLinks)
-    console.log("Here are the docs", docLinks)
-    console.log(docLinks[0].URL)
+    
 
     return (
         <div >
