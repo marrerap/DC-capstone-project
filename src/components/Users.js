@@ -1,10 +1,12 @@
-import React from 'react'
-import '../componentcss/Users.css'
+import React from 'react';
+import '../componentcss/Users.css';
+import DocLinks from './DocLinks';
 
 function Users() {
     return (
         <div className="Users">
-            <h2>Users</h2>
+            <h2>Documentation</h2>
+            <DocLinks />
         </div>
     )
 }

@@ -10,6 +10,7 @@ import { store } from './redux/store'
 import { actionSetMessages } from './redux/actions/messages';
 import { actionCreateUser } from './redux/actions/user';
 import { actionSetChannels } from './redux/actions/channels';
+import { actionSetDocs } from './redux/actions/docLinks';
 
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyBwS9rKFJTES-y6UQoL6g6SGTU_9SIMZVw",
@@ -122,5 +123,28 @@ onSnapshot(q2, (querySnapshot) => {
     store.dispatch(actionSetChannels(channels));
 
 })()
+
+//Query Docs from DB
+const q3 = query(collection(db, "doclinks"));
+onSnapshot(q3, (querySnapshot) => {
+    const docLinks = [];
+    querySnapshot.forEach((doc) => {
+        docLinks.push(doc.data());
+    });
+    store.dispatch(actionSetDocs(docLinks));
+    
+});
+
+
+
+// (async () => {
+//     const querySnapshot = await getDocs(query(collection(db, "docslinks")));
+//     const docs = [];
+//     querySnapshot.forEach((doc) => {
+//         docs.push(doc.data());
+//     });
+//     store.dispatch(actionSetDocs(docs));
+
+// })()
 
 export default firebase
