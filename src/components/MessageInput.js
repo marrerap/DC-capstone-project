@@ -38,8 +38,8 @@ function MessageInput() {
 
 
     return (
-        <div >
-            <InputGroup className="mb-3" >
+        <div className='row' >
+            <InputGroup className="col-md-3" >
                 <FormControl
                     value={input} onChange={e => setInput(e.target.value)}
                     placeholder="Post a message . . ."

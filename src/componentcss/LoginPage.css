@@ -36,6 +36,7 @@
 a {
     text-decoration:none;
     color:#fff;
+    font-size: .65rem;
 }
 
 a:hover {
@@ -76,19 +77,16 @@ a:hover {
     
 }
 
+
 .login__picture {
     flex: 0.3;
 }
 
-.form {
-    flex: 0.5;
-    
-}
 
 .login__button {
     background-color: #19059daa;
     min-height: 40px;
-    min-width: 350px;
+    min-width: 250px;
     max-width: 350px;
     border-radius: 10px;
     color: #fff;
@@ -100,7 +98,7 @@ a:hover {
 
 .login__form-control {
     min-height: 40px;
-    min-width: 350px;
+    min-width: 250px;
     max-width: 350px;
     border-radius: 10px;
     padding-left: 10px;

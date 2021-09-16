@@ -100,51 +100,53 @@ function RegisterPage() {
                 <h2 className="mb-4 Register register__text text-center">Mentorship. <br /> For Devs. By Devs. <br /> Become A S.M.A.C.'er </h2>
             </div>
             {/* Register Body Form */}
-            <div className="profile__body" >
+            <div className="profile__body row" >
                 <div className="spacerdiv">
 
                 </div>
                 <div className="main__panel">
-                    <div className="form__div">
-                        <form className="form">
-                            <div className="form-row">
-                                <div className="col-md-12 mb-3">
+                    
+                        <form className="form row">
+                            {/* <div className="form-row"> */}
+                                <div className=" form-row col  ">
                                     <label className="input__label">First Name</label>
                                     <input type="text" className="form-control" id="validationDefault01" value={fname} onChange={(e) => setFname(e.target.value)} required />
                                 </div>
-                                <div className="col-md-12 mb-3">
+                                <div className="form-row col">
                                     <label className="input__label">Last Name</label>
                                     <input type="text" className="form-control" id="validationDefault02" value={lname} onChange={(e) => setLname(e.target.value)} required />
                                 </div>
-                            </div>
+                            {/* </div> */}
 
-                            <div className="form-row">
-                                <div className="col-md-12 mb-3">
+                            {/* <div className="form-row"> */}
+                                <div className="form-row col">
                                     <label className="input__label">E-Mail</label>
                                     <input type="email" className="form-control" id="validationDefault04" value={email} onChange={(e) => setEmail(e.target.value)} required />
                                 </div>
-                            </div>
+                            {/* </div> */}
                             <div className="form-row">
-                                <div className="col-md-12 mb-3">
+                                <div className="form-row col">
                                     <label className="input__label">Password (6 or more characters)</label>
                                     <input type="password" className="form-control" id="validationDefault05" minLength="6" value={password}onChange={(e) => setPassword(e.target.value)} required />
                                 </div>
                             </div>
                             <div className="form-row">
-                                <div className="col-md-12 mb-3">
-                                    <Form.Select onChange={(e) => setMentor(e.target.value)} aria-label="Default select example" className="Dropdown">
+                                {/* <div className="form-row col"> */}
+                                    <Form.Select onChange={(e) => setMentor(e.target.value)} aria-label="Default select example" className="Dropdown form-row col">
                                         <option>Select An Account Status</option>
                                         <option value="true">Register As A Mentor - I Want To Help </option>
                                         <option value="false">Register As A Mentee - I Need Help</option>
                                     </Form.Select>
-                                </div>
+                                {/* </div> */}
                             </div>
 
                             <br />
                             <label className="input__label text-center mb-3">By clicking Register, you agree to abide by the Terms & Conditions of S.M.A.C. Overflow</label>
 
+
                             <button className="btn register__button col-md-12 mb-3" type="submit" onClick={(e) => { handleRegister(e) }} title="Register New User">Register</button>
                             {/* Success Modal */}
+
                             <Modal className="modal" size="md" show={show} onHide={handleClose}>
                                 <Modal.Header className="modal__header" closeButton>
                                     <Modal.Title className="text-center modal__title">Your account has been created successfully! </Modal.Title>
@@ -173,7 +175,7 @@ function RegisterPage() {
                             </Modal>
                             <p className="input__label text-center">Already on S.M.A.C.? <a className="Sign__In__link" href="/login" title="Sign In Page">Sign In</a></p>
                         </form>
-                    </div>
+             
                 </div>
 
                 <div className="spacerdiv">

@@ -19,8 +19,8 @@ function Header(props) {
     }
 
     return (
-        <div>
-            <p className="Header">{ filteredChannels[0]?.name } Help Channel</p>
+        <div className='row'>
+            <span className="Header col">{ filteredChannels[0]?.name } Help Channel</span>
         </div>
     )
 }

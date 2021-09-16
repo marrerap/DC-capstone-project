@@ -4,6 +4,8 @@
     margin-bottom: 10px;
     border-radius: 10px;
     max-width: 30rem;
+    min-width: 30rem;
+
     border-width: 3px;
     border-color: #fff;
     text-align: left;
@@ -17,7 +19,7 @@
     flex: 0.4;
     margin-left: 25px;
     margin-right: 25px;
-    max-height: 75vh;
+    max-height: 100%;
 }
 
 .message__outgoing {
