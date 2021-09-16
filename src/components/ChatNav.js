@@ -13,6 +13,14 @@ function ChatNav() {
     const dispatch = useDispatch()
     const auth = getAuth();
 
+    function redirect_Main() {
+        var tID = setTimeout(function () {
+            window.location.href = "/";
+            window.clearTimeout(tID);
+            // clear time out.
+        }, 500);
+    }
+
 
 
     return (
@@ -32,7 +40,7 @@ function ChatNav() {
                                 .then(() => {
                                     // Sign-out successful.
                                     dispatch(actionCreateUser(null));
-                                    // Redirect('/')
+                                    redirect_Main();
                                 })
                                 .catch((error) => {
                                     console.log(error);
