@@ -34,10 +34,21 @@ function RegisterPage() {
 
     // Modal Popup on registration
     const [show, setShow] = useState(false);
+    const [showFail, setShowFail] = useState(false);
     const handleShow = () => setShow(true);
+    const handleShowFail = () => setShowFail(true)
     const handleClose = () => {
         setShow(false);
         redirect_Login()
+    }
+
+    const handleCloseFail = () => {
+        setFname('')
+        setLname('')
+        setEmail('')
+        setPassword('')
+        setShowFail(false);
+        
     }
 
 
@@ -71,6 +82,7 @@ function RegisterPage() {
             })
             .catch((error) => {
                 console.log(error);
+                handleShowFail()
             });
     }
 
@@ -98,24 +110,24 @@ function RegisterPage() {
                             {/* <div className="form-row"> */}
                                 <div className=" form-row col  ">
                                     <label className="input__label">First Name</label>
-                                    <input type="text" className="form-control" id="validationDefault01" onChange={(e) => setFname(e.target.value)} required />
+                                    <input type="text" className="form-control" id="validationDefault01" value={fname} onChange={(e) => setFname(e.target.value)} required />
                                 </div>
                                 <div className="form-row col">
                                     <label className="input__label">Last Name</label>
-                                    <input type="text" className="form-control" id="validationDefault02" onChange={(e) => setLname(e.target.value)} required />
+                                    <input type="text" className="form-control" id="validationDefault02" value={lname} onChange={(e) => setLname(e.target.value)} required />
                                 </div>
                             {/* </div> */}
 
                             {/* <div className="form-row"> */}
                                 <div className="form-row col">
                                     <label className="input__label">E-Mail</label>
-                                    <input type="email" className="form-control" id="validationDefault04" onChange={(e) => setEmail(e.target.value)} required />
+                                    <input type="email" className="form-control" id="validationDefault04" value={email} onChange={(e) => setEmail(e.target.value)} required />
                                 </div>
                             {/* </div> */}
                             <div className="form-row">
                                 <div className="form-row col">
                                     <label className="input__label">Password (6 or more characters)</label>
-                                    <input type="password" className="form-control" id="validationDefault05" minLength="6" onChange={(e) => setPassword(e.target.value)} required />
+                                    <input type="password" className="form-control" id="validationDefault05" minLength="6" value={password}onChange={(e) => setPassword(e.target.value)} required />
                                 </div>
                             </div>
                             <div className="form-row">
@@ -131,18 +143,35 @@ function RegisterPage() {
                             <br />
                             <label className="input__label text-center mb-3">By clicking Register, you agree to abide by the Terms & Conditions of S.M.A.C. Overflow</label>
 
-                            <button className="btn register__button col-md-3 mb-3" type="submit" onClick={(e) => { handleRegister(e) }} title="Register New User">Register</button>
+
+                            <button className="btn register__button col-md-12 mb-3" type="submit" onClick={(e) => { handleRegister(e) }} title="Register New User">Register</button>
+                            {/* Success Modal */}
+
                             <Modal className="modal" size="md" show={show} onHide={handleClose}>
                                 <Modal.Header className="modal__header" closeButton>
                                     <Modal.Title className="text-center modal__title">Your account has been created successfully! </Modal.Title>
-                                </Modal.Header>
-
-                                <Modal.Body className="text-center modal__body">Welcome, {user.name} </Modal.Body>
-                                <Modal.Footer className="modal__footer">
+                                    <br/>
+                                    <Modal.Title className="text-center modal__title">Welcome, {user.name} </Modal.Title>
+                                    <br/>
                                     <Button className="modal__button" variant="secondary" onClick={handleClose}>
                                         Exit
                                     </Button>
-                                </Modal.Footer>
+                                </Modal.Header>
+
+                            </Modal>
+
+
+                            {/* Fail Modal */}
+                            <Modal className="modal" size="md" show={showFail} onHide={handleCloseFail}>
+                                <Modal.Header className="modal__header" closeButton>
+                                    <Modal.Title className="text-center modal__title">This E-Mail Is  Already In Use! </Modal.Title>
+                                    <br/>
+                                    <br/>
+                                    <Button className="modal__button" variant="secondary" onClick={handleCloseFail}>
+                                        Exit
+                                    </Button>
+                                </Modal.Header>
+
                             </Modal>
                             <p className="input__label text-center">Already on S.M.A.C.? <a className="Sign__In__link" href="/login" title="Sign In Page">Sign In</a></p>
                         </form>
