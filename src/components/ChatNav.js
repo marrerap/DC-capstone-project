@@ -18,7 +18,7 @@ function ChatNav() {
             window.location.href = "/";
             window.clearTimeout(tID);
             // clear time out.
-        }, 500);
+        }, 0);
     }
 
 

@@ -43,9 +43,17 @@ function LoginPage(props) {
             console.log(error)
         })
     }
+    function redirect_Main() {
+        var tID = setTimeout(function () {
+            window.location.href = "/chat";
+            window.clearTimeout(tID);
+            // clear time out.
+        }, 0);
+    }
+
 
     if (checked && user ){
-        return <Redirect to="/chat" />
+        return redirect_Main()
     }
     return (
         <div className="login__page ">
