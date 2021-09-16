@@ -175,7 +175,7 @@ function RegisterPage() {
                             </Modal>
                             <p className="input__label text-center">Already on S.M.A.C.? <a className="Sign__In__link" href="/login" title="Sign In Page">Sign In</a></p>
                         </form>
-             
+            
                 </div>
 
                 <div className="spacerdiv">

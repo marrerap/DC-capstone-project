@@ -1,7 +1,5 @@
 import React from 'react'
 import '../componentcss/Main.css'
-import Feed from './Feed'
-import MessageInput from './MessageInput'
 import { useParams } from 'react-router'
 import HeaderDashboard from './HeaderDashboard'
 
