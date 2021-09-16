@@ -75,7 +75,7 @@ onAuthStateChanged(auth, async user => {
 });
 
 // Queries posts from firebase DB
-const q = query(collection(db, "messages"), orderBy("time", "desc"));
+const q = query(collection(db, "messages"), orderBy("time", "asc"));
 onSnapshot(q, async (querySnapshot) => {
     const messages = [];
     querySnapshot.forEach(async (doc) => {
