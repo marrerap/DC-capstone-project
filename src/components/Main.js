@@ -9,9 +9,9 @@ function Main() {
     const { channelId }  = useParams()
     return (
         <div className="MainDiv row">
-            <div><Header className="Header" channelId={channelId} /></div>
-            <div><Feed className="Feed "/></div>
-            <div><MessageInput className="MessageInput "/></div>
+            <div ><Header className="Header " channelId={channelId} /></div>
+            <div className=' FeedBody'><Feed className="Feed col"/></div>
+            <div><MessageInput className=" MessageInput "/></div>
         </div>
     )
 }

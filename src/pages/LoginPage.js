@@ -33,34 +33,34 @@ function LoginPage(props) {
         return <Redirect to="/chat" />
     }
     return (
-        <div className="login__page">
+        <div className="login__page ">
             {/* Header */}
-            <div className="login__header">
-                <div><a href="/" title="Sign In Page"><img className="header__img" src={Logo} alt=""></img></a></div>
-                <div><a href="/howitworks" title="How It Works">HOW IT WORKS</a></div>
-                <div><a href="/register" title="Become A Mentor">BECOME A MENTOR</a></div>
-                <div><a href="/register" title="Register A New User"><button className="register__btn" >BECOME A MENTEE</button></a></div>
+            <div className="login__header row">
+                <div className='col-3 ' ><a href="/" title="Sign In Page"><img className="header__img img-fluid" src={Logo} alt=""></img></a></div>
+                <div className='col-3'><a href="/howitworks" title="How It Works">HOW IT WORKS</a></div>
+                <div className='col-3' ><a href="/register" title="Become A Mentor">BECOME MENTOR</a></div>
+                <div className='col-3' ><a href="/register" title="Register A New User"> BECOME MENTEE</a></div>
             </div >
 
             {/* Login Body */}
-            <div>
-                <h1>Get Help From<br/>Senior Developers</h1>
+            <div className='row'>
+                <h1 className='col'>Get Help From<br/>Senior Developers</h1>
                 <br/>
-                <div className="login__body" >
-                    <div className="login__picture">
-                        <img src={Mentorship} alt="SMAC Overflow Mentorship" className="login__img"></img>
-                    </div>
-                    <form className="form">
-                        <legend className="col-md-12 mb-3 Register login__text "> Sign In </legend>
+                {/* <div className="login__body row" > */}
+                    <div className=" ">
+                        <img src={Mentorship} alt="SMAC Overflow Mentorship" className="col login__picture login__img img-fluid"></img>
+                    {/* </div> */}
+                    <form className="form col-12">
+                        <legend className=" Register login__text "> Sign In </legend>
                         <div className="form-row">
-                            <div className="col-md-12 mb-3">
+                            <div className="">
                                 <input type="email" className="login__form-control" id="validationDefault01" title="Please Enter Your E-Mail" placeholder=" E-Mail" onChange={(e) => setEmail(e.target.value)} required />
                             </div>
-                            <div className="col-md-12 mb-3">
+                            <div className="">
                                 <input type="password" className="login__form-control" id="validationDefault02" title="Please Enter Your Password" placeholder=" Password" onChange={(e) => setPassword(e.target.value)} required />
                             </div>
                             <a className="forgot__password"  href="/register"><p className="forgot__password" title="Register A New User">Forgot Password?</p></a>
-                            <button className="btn login__button col-md-12 mb-3" type="submit" onClick={(e) => { handleLogin(e) }} title="Sign In" > Sign In </button>
+                            <button className="btn login__button " type="submit" onClick={(e) => { handleLogin(e) }} title="Sign In" > Sign In </button>
                         </div>
                     </form>
                 </div>
