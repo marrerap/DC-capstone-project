@@ -9,7 +9,7 @@ function Messages(props) {
     const messages = useSelector(state => state.messages)
     // console.log(messages)
 
-    console.log(channelId)
+    
 
     const filteredMessages = messages.filter((message) => {
         return message.ChannelId.id === channelId;

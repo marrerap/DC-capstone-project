@@ -78,13 +78,19 @@ onAuthStateChanged(auth, async user => {
 // Queries posts from firebase DB
 const q = query(collection(db, "messages"), orderBy("time", "asc"));
 onSnapshot(q, async (querySnapshot) => {
-    const messages = [];
+    let messages = [];
+    // Get all data and move into the messages array
     querySnapshot.forEach(async (doc) => {
         const data = doc.data();
-        const user = await (await getDoc(data.UserId)).data()
-        data.user = user
         messages.push(data);
     });
+    // Get user data for each message
+    messages = await Promise.all(messages.map( async (data) => {
+        const user = await (await getDoc(data.UserId)).data()
+        data.user = user
+        return data
+    }))
+    
     store.dispatch(actionSetMessages(messages));
 });
 

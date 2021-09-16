@@ -2,21 +2,22 @@ import React, { useState } from 'react'
 import { InputGroup, FormControl, Button } from 'react-bootstrap'
 import SendIcon from '@material-ui/icons/Send';
 import '../componentcss/MessageInput.css'
-import { useDispatch, useSelector } from 'react-redux';
-import { actionAddMessage } from '../redux/actions/messages';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router'
-import { doc } from "firebase/firestore";
 import { db } from '../firebase'
+import { collection, addDoc, doc } from "firebase/firestore";
+
+
 
 
 function MessageInput() {
     const [input, setInput] = useState('');
-    const dispatch = useDispatch()
+    
     const user = useSelector( state => state.user)
     const { channelId }  = useParams()
 
-    console.log(channelId)
-    console.log("here is the current user", user)
+    // console.log(channelId)
+    // console.log("here is the current user", user)
     
     const addMessage = e => {
         e.preventDefault();
@@ -24,14 +25,14 @@ function MessageInput() {
         const userRef = doc(db, "users", user.user.refId)
 
         console.log (channelRef, userRef)
-        dispatch(actionAddMessage(
+        addDoc(collection(db, 'messages'), 
             {
                 ChannelId: channelRef,
                 UserId: userRef,
                 content: input,
                 time: new Date()
             }
-        ))
+        )
         // reset Text field
         setInput('')
     }
