@@ -5,7 +5,6 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { signOut, getAuth } from "firebase/auth";
 import { useDispatch } from 'react-redux'
 import { actionCreateUser } from '../redux/actions/user'
-import { Redirect } from 'react-router';
 import { Dropdown } from 'react-bootstrap';
 
 

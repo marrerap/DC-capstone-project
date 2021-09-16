@@ -3,14 +3,12 @@
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 10px;
-    max-width: 30rem;
-    min-width: 30rem;
-
+    max-width: 20rem;
+    min-width: 20rem;
+    min-height: 8rem;
     border-width: 3px;
     border-color: #fff;
     text-align: left;
-    
-    
 }
 
 .messages {
@@ -40,10 +38,6 @@
 
 .message__time {
     margin: 3px;
-}
-
-.message__body {
-    
 }
 
 .Avatar {

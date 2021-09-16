@@ -10,7 +10,7 @@ function Main() {
     return (
         <div className="MainDiv row">
             <div ><Header className="Header " channelId={channelId} /></div>
-            <div className=' FeedBody'><Feed className="Feed col"/></div>
+            <div className='FeedBody'><Feed className="Feed col"/></div>
             <div><MessageInput className=" MessageInput "/></div>
         </div>
     )

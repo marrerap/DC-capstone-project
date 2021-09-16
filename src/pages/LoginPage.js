@@ -5,7 +5,6 @@ import Mentorship from '../images/visit-arc.svg'
 import { useState } from 'react'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import "../firebase";
-import { Redirect } from 'react-router'
 import { useSelector } from 'react-redux'
 
 import { Modal, Button } from 'react-bootstrap'
