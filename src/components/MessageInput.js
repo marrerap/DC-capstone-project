@@ -39,19 +39,21 @@ function MessageInput() {
 
 
     return (
-        <div className='row' >
-            <InputGroup className="col-md-3" >
-                <FormControl
-                    value={input} onChange={e => setInput(e.target.value)}
-                    placeholder="Post a message . . ."
-                    aria-label="Message Input"
-                    aria-describedby="basic-addon2"
-                    as="textarea"
-                />
-                <Button className="button postbutton" onClick={addMessage} id="button-addon2">
-                    SEND <SendIcon/>
-                </Button>
-            </InputGroup>
+        <div className='row justify-content-center p-3' >
+            <div className="col-12 col-md-9">
+                <InputGroup>
+                    <FormControl
+                        value={input} onChange={e => setInput(e.target.value)}
+                        placeholder="Post a message . . ."
+                        aria-label="Message Input"
+                        aria-describedby="basic-addon2"
+                        as="textarea"
+                    />
+                    <Button className="button postbutton" onClick={addMessage} id="button-addon2">
+                        SEND <SendIcon/>
+                    </Button>
+                </InputGroup>
+            </div>
         </div>
     )
 }
