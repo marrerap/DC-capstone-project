@@ -1,5 +1,5 @@
 .Main {
-    flex: 0.4;
+    /* flex: 0.4; */
     display: flex;
     margin-left: 25px;
     margin-right: 25px;
@@ -14,4 +14,7 @@
 
 .Header {
     font-size: 32px;
+}
+.FeedBody {
+    min-height: auto;
 }

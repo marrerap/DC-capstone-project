@@ -4,10 +4,7 @@
     flex-direction: column;
     background-image: linear-gradient(#19059d, #c202d3);
     animation: fadeIn 2s;
-    -webkit-animation: fadeIn 2s;
-    -moz-animation: fadeIn 2s;
-    -o-animation: fadeIn 2s;
-    -ms-animation: fadeIn 2s;
+    
 }
 
 @keyframes fadeIn {
@@ -39,6 +36,7 @@
 a {
     text-decoration:none;
     color:#fff;
+    font-size: .65rem;
 }
 
 a:hover {
@@ -79,19 +77,16 @@ a:hover {
     
 }
 
+
 .login__picture {
     flex: 0.3;
 }
 
-.form {
-    flex: 0.5;
-    
-}
 
 .login__button {
     background-color: #19059daa;
     min-height: 40px;
-    min-width: 350px;
+    min-width: 250px;
     max-width: 350px;
     border-radius: 10px;
     color: #fff;
@@ -103,7 +98,7 @@ a:hover {
 
 .login__form-control {
     min-height: 40px;
-    min-width: 350px;
+    min-width: 250px;
     max-width: 350px;
     border-radius: 10px;
     padding-left: 10px;
@@ -118,3 +113,24 @@ a:hover {
 .login__form-control:focus{
     outline: 2px solid #19059daa;
 }
+
+.modal__header{
+    background-image: linear-gradient(#19059d, #c202d3);
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    
+}
+
+.modal__body{
+    background-image: linear-gradient(#19059d, #c202d3);
+}
+
+.modal__footer {
+    background-image: linear-gradient(#19059d, #c202d3);
+}
+
+.modal__button{
+    background-color: #19059d;
+}
+

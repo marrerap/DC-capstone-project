@@ -3,13 +3,16 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import { getAuth, onAuthStateChanged } from '@firebase/auth';
+
 import { getFirestore, getDoc, doc, updateDoc } from "firebase/firestore";
+
 import { initializeApp } from "firebase/app"
 import { onSnapshot, collection, query, getDocs, where, orderBy } from "firebase/firestore";
 import { store } from './redux/store'
 import { actionSetMessages } from './redux/actions/messages';
 import { actionCreateUser } from './redux/actions/user';
 import { actionSetChannels } from './redux/actions/channels';
+import { actionSetDocs } from './redux/actions/docLinks';
 
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyBwS9rKFJTES-y6UQoL6g6SGTU_9SIMZVw",
@@ -75,15 +78,21 @@ onAuthStateChanged(auth, async user => {
 });
 
 // Queries posts from firebase DB
-const q = query(collection(db, "messages"), orderBy("time", "desc"));
+const q = query(collection(db, "messages"), orderBy("time", "asc"));
 onSnapshot(q, async (querySnapshot) => {
-    const messages = [];
+    let messages = [];
+    // Get all data and move into the messages array
     querySnapshot.forEach(async (doc) => {
         const data = doc.data();
-        const user = await (await getDoc(data.UserId)).data()
-        data.user = user
         messages.push(data);
     });
+    // Get user data for each message
+    messages = await Promise.all(messages.map( async (data) => {
+        const user = await (await getDoc(data.UserId)).data()
+        data.user = user
+        return data
+    }))
+    
     store.dispatch(actionSetMessages(messages));
 });
 
@@ -122,5 +131,28 @@ onSnapshot(q2, (querySnapshot) => {
     store.dispatch(actionSetChannels(channels));
 
 })()
+
+//Query Docs from DB
+const q3 = query(collection(db, "doclinks"));
+onSnapshot(q3, (querySnapshot) => {
+    const docLinks = [];
+    querySnapshot.forEach((doc) => {
+        docLinks.push(doc.data());
+    });
+    store.dispatch(actionSetDocs(docLinks));
+    
+});
+
+
+
+// (async () => {
+//     const querySnapshot = await getDocs(query(collection(db, "docslinks")));
+//     const docs = [];
+//     querySnapshot.forEach((doc) => {
+//         docs.push(doc.data());
+//     });
+//     store.dispatch(actionSetDocs(docs));
+
+// })()
 
 export default firebase

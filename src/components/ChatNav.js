@@ -5,7 +5,6 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { signOut, getAuth } from "firebase/auth";
 import { useDispatch, useSelector } from 'react-redux'
 import { actionCreateUser } from '../redux/actions/user'
-import { Redirect } from 'react-router';
 import { Dropdown } from 'react-bootstrap';
 import { Link } from "react-router-dom"
 
@@ -16,16 +15,31 @@ function ChatNav() {
     const user = useSelector(state => state.user)
     console.log(user)
 
+    function redirect_Main() {
+        var tID = setTimeout(function () {
+            window.location.href = "/";
+            window.clearTimeout(tID);
+            // clear time out.
+        }, 0);
+    }
+
 
 
     return (
-        <div className="ChatNav">
-            <a href="/chat"><img className="Logo" src={Logo} alt='logo' /></a>
-            <a href="/howitworks" title="How It Works">HOW IT WORKS</a>
+        <div className="ChatNav row">
+            <div className='col-5' >
+                 <a href="/chat"><img className="Logo img-fluid" src={Logo} alt='logo' /></a>
+            </div>
+           
+            <div className='col-2'>
+                <a href="/howitworks" title="How It Works">HOW IT WORKS</a>
+            </div>
+            
+            
             {/* sign out button */}
 
-
-            <Dropdown className="DropdownIcon">
+            <div className='col-5' >
+                <Dropdown className="DropdownIcon">
                 <Dropdown.Toggle className="DropdownToggle" id="dropdown-basic">
                     <AccountCircleIcon className="AccountCircleIcon"/>
                 </Dropdown.Toggle>
@@ -40,7 +54,7 @@ function ChatNav() {
                                 .then(() => {
                                     // Sign-out successful.
                                     dispatch(actionCreateUser(null));
-                                    // Redirect('/')
+                                    redirect_Main();
                                 })
                                 .catch((error) => {
                                     console.log(error);
@@ -51,6 +65,8 @@ function ChatNav() {
                         </Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
+            </div>
+            
 
         </div>
     )
