@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
 import React, { useState } from 'react';
-import { ListGroup, Offcanvas } from 'react-bootstrap';
+import { ListGroup, Offcanvas, Button } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
 import '../componentcss/OffCanvasMain.css';
@@ -14,7 +13,7 @@ function OffCanvasChannels() {
     const handleShow = () => setShow(true);
     return (
         <div className='OffCanvasChannels'>
-            <Button className='LaunchBtn' style={{ backgroundColor: 'rgba(255, 255, 255, 0.357)'}} varient='light' onClick={handleShow}>
+            <Button className='LaunchBtn' style={{ backgroundColor: 'rgba(255, 255, 255, 0.357)'}} variant='primary' onClick={handleShow}>
                 Launch
             </Button>
 
@@ -27,7 +26,6 @@ function OffCanvasChannels() {
             <ListGroup>
                 {channels.map((channel, id) => {
                     return  <Link key={id} className="Channel"
-                    
                     to={`/chat/${channel.id}`}>
                     <p className="ChannelName"><SupervisedUserCircleIcon className="SupervisedUserCircleIcon"/> {channel.name}</p>
                 </Link>

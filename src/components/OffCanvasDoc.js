@@ -1,6 +1,6 @@
-import Button from '@restart/ui/esm/Button';
+
 import React, { useState } from 'react'
-import { ListGroup, Offcanvas } from 'react-bootstrap';
+import { ListGroup, Offcanvas, Button } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import '../componentcss/OffCanvasMain.css'
 import DescriptionIcon from '@material-ui/icons/Description';
@@ -10,8 +10,8 @@ function OffCanvasDoc() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
-        <div >
-            <Button variant="primary" onClick={handleShow}>
+        <div className='OffCanvasDoc'>
+            <Button className='DocBtn' style={{ backgroundColor: 'rgba(255, 255, 255, 0.357)'}} variant="primary" onClick={handleShow}>
                 Documentation
             </Button>
             <Offcanvas className="OffCanvasMain" placement='end' show={show} onHide={handleClose}>
