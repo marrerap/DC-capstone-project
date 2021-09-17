@@ -130,10 +130,10 @@ function RegisterPage() {
                                     <input type="password" className="form-control" id="validationDefault05" minLength="6" value={password}onChange={(e) => setPassword(e.target.value)} required />
                                 </div>
                             </div>
-                            <div className="form-row">
+                            <div className="form-row d-flex">
                                 {/* <div className="form-row col"> */}
                                     <Form.Select onChange={(e) => setMentor(e.target.value)} aria-label="Default select example" className="Dropdown form-row col">
-                                        <option>Select An Account Status</option>
+                                        <option>Account Status</option>
                                         <option value="true">Register As A Mentor - I Want To Help </option>
                                         <option value="false">Register As A Mentee - I Need Help</option>
                                     </Form.Select>
