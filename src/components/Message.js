@@ -30,7 +30,7 @@ function Message({message, time}) {
             </div>
             <br/>
             <div className="message__body">
-                <p className="message__body">{message.content}</p>
+                {message.content}
             </div>
         </div>
     )

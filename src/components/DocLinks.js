@@ -1,7 +1,6 @@
 import React from 'react';
 import '../componentcss/Channels.css';
 import { ListGroup } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import '../componentcss/Channel.css';
 import DescriptionIcon from '@material-ui/icons/Description';
 import { useSelector } from 'react-redux';
