@@ -10,8 +10,8 @@
 
 .Logo {
     display: flex;
-    max-width: 128px;
-    width: 100%;
+    max-width: 64px;
+    /* width: 100%; */
     /* margin-left: 25px; */
     ;
 }
@@ -21,8 +21,8 @@
 }
 
 .AccountCircleIcon {
-    min-width: 75px;
-    min-height: 75px;
+    min-width: 50px;
+    min-height: 50px;
     /* margin-right: 25px; */
 }
 

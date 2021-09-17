@@ -35,5 +35,7 @@
 .chatpage__Body{
     display: flex;
     justify-content: space-around;
+    overflow: auto;
+    height: 100vh;
 }
 

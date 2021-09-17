@@ -12,7 +12,7 @@ function OffCanvasDoc() {
     return (
         <div >
             <Button variant="primary" onClick={handleShow}>
-                Documentation
+                Documents
             </Button>
             <Offcanvas className="OffCanvasMain" placement='end' show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton>

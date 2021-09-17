@@ -32,13 +32,13 @@ function ChatNav() {
             </div>
            
             <div className='col-2'>
-                <a href="/howitworks" title="How It Works">HOW IT WORKS</a>
+                <a href="/howitworks" title="ABOUT S.M.A.C.">ABOUT S.M.A.C.</a>
             </div>
             
             
             {/* sign out button */}
 
-            <div className='col-5' >
+            <div className='col-5 d-flex justify-content-end' >
                 <Dropdown className="DropdownIcon">
                 <Dropdown.Toggle className="DropdownToggle" id="dropdown-basic">
                     <AccountCircleIcon className="AccountCircleIcon"/>
