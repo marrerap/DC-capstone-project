@@ -9,7 +9,7 @@ import Button from '@restart/ui/esm/Button'
 function Profile() {
     const dispatch = useDispatch()
     const user = useSelector(state => state.user)
-    console.log('here is', user)
+    // console.log('here is', user)
     const [userFirstName, setUserFirstName] = useState(`${user.user.fname}`)
     const [userLastName, setUserLastName] = useState(`${user.user.lname}`)
     const [userMentor, setUserMentor] = useState(`${user.user.mentor}`)

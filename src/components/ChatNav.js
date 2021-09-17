@@ -13,7 +13,7 @@ function ChatNav() {
     const dispatch = useDispatch()
     const auth = getAuth();
     const user = useSelector(state => state.user)
-    console.log(user)
+    // console.log(user)
 
     function redirect_Main() {
         var tID = setTimeout(function () {

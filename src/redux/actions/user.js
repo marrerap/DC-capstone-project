@@ -26,7 +26,7 @@ export function actionUpdateUser (user) {
     
     return async function(dispatch, getState) {
         
-        const userRef = await updateDoc(doc(db,'users', user.refId), user)
+        await updateDoc(doc(db,'users', user.refId), user)
         dispatch({
             type: 'UPDATE_USER', 
             user

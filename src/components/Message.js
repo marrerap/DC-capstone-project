@@ -8,8 +8,8 @@ import { useSelector } from 'react-redux';
 
 function Message({message, time}) {
     const user = useSelector(state => state.user);
-    console.log(user)
-    console.log(message)
+    // console.log(user)
+    // console.log(message)
     let cssClass = 'message';
     if (user.user.id === message.user.id ) {
         cssClass += " message__outgoing"
