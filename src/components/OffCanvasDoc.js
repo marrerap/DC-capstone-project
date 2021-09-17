@@ -4,7 +4,6 @@ import { ListGroup, Offcanvas } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import '../componentcss/OffCanvasMain.css'
 import DescriptionIcon from '@material-ui/icons/Description';
-import { render } from '@testing-library/react';
 function OffCanvasDoc() {
     const docLinks = useSelector(state => state.docLinks)
     const [show, setShow] = useState(false);

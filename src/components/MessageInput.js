@@ -24,7 +24,7 @@ function MessageInput() {
         const channelRef = doc(db, "channels", channelId)
         const userRef = doc(db, "users", user.user.refId)
 
-        console.log (channelRef, userRef)
+        // console.log (channelRef, userRef)
         addDoc(collection(db, 'messages'), 
             {
                 ChannelId: channelRef,
