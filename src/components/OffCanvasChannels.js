@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom'
-import Button from '@restart/ui/esm/Button';
-import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+import React, { useState } from 'react';
 import { ListGroup, Offcanvas } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
-import '../componentcss/OffCanvasMain.css'
+import '../componentcss/OffCanvasMain.css';
 
 function OffCanvasChannels() {
     const channels = useSelector(state => state.channels)
@@ -13,8 +13,8 @@ function OffCanvasChannels() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
-        <div>
-            <Button variant="primary" onClick={handleShow}>
+        <div className='OffCanvasChannels'>
+            <Button className='LaunchBtn' style={{ backgroundColor: 'rgba(255, 255, 255, 0.357)'}} varient='light' onClick={handleShow}>
                 Launch
             </Button>
 
