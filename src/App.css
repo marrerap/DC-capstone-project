@@ -7,9 +7,6 @@
   padding: 10px;
   height: 100vh;
   overflow: auto;
-  
-
-
 }
 
 
@@ -19,6 +16,6 @@
   justify-content: center;
   height: calc(100vh - 92px);
   padding-top: 10px;
-   
-
 }
+
+
