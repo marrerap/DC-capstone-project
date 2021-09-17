@@ -26,19 +26,19 @@ function ChatNav() {
 
 
     return (
-        <div className="ChatNav row">
-            <div className='col-5' >
+        <div className="ChatNav row d-flex">
+            <div className='col' >
                  <a href="/chat"><img className="Logo img-fluid" src={Logo} alt='logo' /></a>
             </div>
            
-            <div className='col-2'>
+            <div className='col'>
                 <a href="/howitworks" title="ABOUT S.M.A.C.">ABOUT S.M.A.C.</a>
             </div>
             
             
             {/* sign out button */}
 
-            <div className='col-5 d-flex justify-content-end' >
+            <div className='col d-flex justify-content-end' >
                 <Dropdown className="DropdownIcon">
                 <Dropdown.Toggle className="DropdownToggle" id="dropdown-basic">
                     <AccountCircleIcon className="AccountCircleIcon"/>

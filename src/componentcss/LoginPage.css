@@ -86,7 +86,7 @@ a:hover {
 .login__button {
     background-color: #19059daa;
     min-height: 40px;
-    min-width: 250px;
+    /* min-width: 250px; */
     max-width: 350px;
     border-radius: 10px;
     color: #fff;
@@ -98,7 +98,8 @@ a:hover {
 
 .login__form-control {
     min-height: 40px;
-    min-width: 250px;
+    display: flex;
+    /* min-width: 250px; */
     max-width: 350px;
     border-radius: 10px;
     padding-left: 10px;
