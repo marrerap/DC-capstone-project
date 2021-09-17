@@ -11,15 +11,23 @@ import OffCanvasChannels from '../components/OffCanvasChannels';
 function Main() {
     const { channelId }  = useParams()
     return (
-        <div className="MainDiv row justify-content-center">
-            <div className='d-flex flex-row justify-content-around'>
-                <OffCanvasChannels className='col-6'/>
+        <div className="MainDiv ">
+            <div className='row'>
+                <div className='col-6' >
+                    <OffCanvasChannels />
+                </div>
+                <div className='col-6' >
+                     <OffCanvasDoc  />
+                </div>
+                   
             
-                <OffCanvasDoc className='col-6' />
+              
             </div>
-            <div ><Header className="Header " channelId={channelId} /></div>
-            <div className='FeedBody col-10'><Feed className="Feed"/></div>
-            <div className=' col-9' ><MessageInput  className=" MessageInput "/></div>
+
+             
+            <Header className="Header " channelId={channelId} />
+            <Feed className="Feed"/>
+           <MessageInput  className=" MessageInput "/>
         </div>
     )
 }

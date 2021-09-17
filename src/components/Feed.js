@@ -7,12 +7,9 @@ import Messages from './Messages'
 function Feed() {
     const { channelId }  = useParams()
     // console.log(id)
+    // map function for messages beneath header
     return (
-        <div className='messagesFeed'>
-            {/* map function for messages beneath header */}
-            <Messages className='' channelId={channelId} />
-
-        </div>
+        <Messages  channelId={channelId} />
     )
 }
 

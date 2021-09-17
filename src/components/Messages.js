@@ -18,7 +18,7 @@ function Messages(props) {
 
 
     return (
-        <div className="messages d-flex">
+        <div className="messages">
             {filteredMessages.map((message, index) => {
                 return <Message style={{display: 'flex'}} key={index} message={message} time={message.time.toDate()}> </Message>
             })}
