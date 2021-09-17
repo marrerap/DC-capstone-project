@@ -6,7 +6,7 @@ import OffCanvasChannels from './OffCanvasChannels'
 function ChatMain() {
     return (
         <div className="ChatMain__picture">
-            <p>Press Launch To Select A Help Channel</p>
+            <h4>Select A Channel Below</h4>
             <OffCanvasChannels/>
             <br/>
             <img src={Mentorship2} alt="SMAC Overflow Mentorship" className="ChatMain__img img-fluid"></img>

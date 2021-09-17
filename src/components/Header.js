@@ -21,10 +21,7 @@ function Header(props) {
 
     return (
         <div className=' d-flex flex-row '>
-        
             <span className="Header col">{ filteredChannels[0]?.name } Help Channel</span>
-   
-
         </div>
     )
 }

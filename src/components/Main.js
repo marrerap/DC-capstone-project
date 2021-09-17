@@ -9,7 +9,7 @@ import OffCanvasChannels from '../components/OffCanvasChannels';
 
 
 function Main() {
-    const { channelId }  = useParams()
+    const { channelId } = useParams()
     return (
         <div className="MainDiv ">
             <div className='row'>
@@ -17,17 +17,17 @@ function Main() {
                     <OffCanvasChannels />
                 </div>
                 <div className='col-6' >
-                     <OffCanvasDoc  />
+                    <OffCanvasDoc />
                 </div>
-                   
-            
-              
+
+
+
             </div>
 
-             
+
             <Header className="Header " channelId={channelId} />
-            <Feed className="Feed"/>
-           <MessageInput  className=" MessageInput "/>
+            <Feed className="Feed" />
+            <MessageInput className=" MessageInput " />
         </div>
     )
 }
