@@ -13,8 +13,10 @@ function OffCanvasChannels() {
     const handleShow = () => setShow(true);
     return (
         <div className='OffCanvasChannels'>
+
             <Button className='LaunchBtn' style={{ backgroundColor: 'rgba(255, 255, 255, 0.357)'}} variant='primary' onClick={handleShow}>
                 Launch
+
             </Button>
 
             <Offcanvas className="OffCanvasMain" show={show} onHide={handleClose}>

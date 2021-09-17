@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 
 
+
 function Header(props) {
     const channelId = props.channelId
     const channels = useSelector(state => state.channels)
@@ -19,8 +20,11 @@ function Header(props) {
     }
 
     return (
-        <div className='row'>
+        <div className=' d-flex flex-row '>
+        
             <span className="Header col">{ filteredChannels[0]?.name } Help Channel</span>
+   
+
         </div>
     )
 }

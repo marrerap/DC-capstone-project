@@ -59,7 +59,7 @@ function LoginPage(props) {
             {/* Header */}
             <div className="login__header row">
                 <div className='col-3 ' ><a href="/" title="Sign In Page"><img className="header__img img-fluid" src={Logo} alt=""></img></a></div>
-                <div className='col-3'><a href="/howitworks" title="How It Works">HOW IT WORKS</a></div>
+                <div className='col-3'><a href="/howitworks" title="ABOUT S.M.A.C.">ABOUT S.M.A.C.</a></div>
                 <div className='col-3' ><a href="/register" title="Become A Mentor">BECOME MENTOR</a></div>
                 <div className='col-3' ><a href="/register" title="Register A New User"> BECOME MENTEE</a></div>
             </div >

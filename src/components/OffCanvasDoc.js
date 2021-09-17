@@ -10,9 +10,11 @@ function OffCanvasDoc() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
+
         <div className='OffCanvasDoc'>
             <Button className='DocBtn' style={{ backgroundColor: 'rgba(255, 255, 255, 0.357)'}} variant="primary" onClick={handleShow}>
                 Documentation
+
             </Button>
             <Offcanvas className="OffCanvasMain" placement='end' show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton>
