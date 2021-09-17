@@ -71,8 +71,8 @@
     background-color: #19059daa;
     color: #fff;
     min-height: 40px;
-    min-width: 290px;
-    max-width: 310px;
+
+    max-width: 175px;
     border-radius: 10px;
     overflow: auto;
 }
@@ -89,8 +89,8 @@
     background-color: #19059daa;
     color: #fff;
     min-height: 40px;
-    min-width: 300px;
-    max-width: 320px;
+
+    max-width: 155px;
     border-radius: 10px;
     margin: 10px 0px;
     overflow: auto;
