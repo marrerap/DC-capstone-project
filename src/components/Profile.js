@@ -93,7 +93,7 @@ function Profile() {
                             <div className="form-row">
                                 <div className="col-md-12 mb-3">
                                     <Form.Select onChange={(e) => setUserMentor(e.target.value)} aria-label="Default select example" className="Dropdown">
-                                        <option>Update Account Status</option>
+                                        <option>Update Account</option>
                                         <option value="true">Register As A Mentor - I Want To Help </option>
                                         <option value="false">Register As A Mentee - I Need Help</option>
                                     </Form.Select>
