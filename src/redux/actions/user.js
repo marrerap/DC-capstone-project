@@ -1,3 +1,5 @@
+import { collection, updateDoc } from "firebase/firestore";
+import { db } from "../../firebase";
 
 export function actionCreateUser (object) {
     return {
@@ -18,4 +20,19 @@ export function actionLogoutUser () {
         type: 'LOGOUT_USER'
         
     }
+}
+
+export function actionUpdateUser (user) {
+    
+    return async function(dispatch, getState) {
+        
+        const userRef = await updateDoc(collection(db,'users'), user)
+        dispatch({
+            type: ' UPDATE_USER', 
+            user
+        })
+        
+        
+    }
+
 }
