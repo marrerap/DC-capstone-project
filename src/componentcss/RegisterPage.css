@@ -58,12 +58,14 @@
 
 .input__label{
     min-height: 40px;
-    min-width: 300px;
+    /* min-width: 300px; */
     max-width: 320px;
     border-radius: 10px;
     align-content: center;
     justify-content: center;
     overflow: auto;
+    display: flex;
+    
     
 }
 

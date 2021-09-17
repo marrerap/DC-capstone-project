@@ -65,7 +65,7 @@ function LoginPage(props) {
             </div >
 
             {/* Login Body */}
-            <div className='row'>
+            <div className='row '>
                 <h1 className='col'>Get Help From<br/>Senior Developers</h1>
                 <br/>
                 {/* <div className="login__body row" > */}
