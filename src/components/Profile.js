@@ -51,7 +51,7 @@ function Profile() {
             </div >
             <br />
             <div>
-                <h2 className="mb-4 Register register__text text-center">Edit profile</h2>
+                <h2 className="mb-4 Register register__text text-center">Edit Profile</h2>
             </div>
             {/* Register Body Form */}
             <div className="profile__body" >
