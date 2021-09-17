@@ -13,6 +13,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import "./firebase";
 import ChatPageChannel from "./pages/ChatPageChannel";
 import HowItWorks from "./pages/HowItWorks"
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
           <Route exact path="/howitworks">
             <HowItWorks />
           </Route>
+          <ProtectedRoute path="/profile/:userId">
+            <ProfilePage />
+          </ProtectedRoute>
 
           <ProtectedRoute exact path="/chat">
             <ChatPage />

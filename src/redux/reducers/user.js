@@ -14,6 +14,10 @@ export function user (state = {
                 user: null,
                 checked: false
             }
+        case 'UPDATE_USER':
+            return {
+                user: action.object
+            }
         
         default:
             return state

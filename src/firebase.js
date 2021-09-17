@@ -3,7 +3,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import { getAuth, onAuthStateChanged } from '@firebase/auth';
-import { getFirestore, getDoc, doc } from "firebase/firestore";
+import { getFirestore, getDoc, doc, updateDoc } from "firebase/firestore";
 import { initializeApp } from "firebase/app"
 import { onSnapshot, collection, query, getDocs, where, orderBy } from "firebase/firestore";
 import { store } from './redux/store'
