@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import { Form } from 'react-bootstrap'
+import { Form, Modal } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { actionUpdateUser } from '../redux/actions/user'
 import Logo from '../images/LogoSMAC.png'
-import { doc, updateDoc } from "firebase/firestore";
-import { db } from "../firebase";
 import "../firebase";
+import Button from '@restart/ui/esm/Button'
 
 function Profile() {
     const dispatch = useDispatch()
@@ -13,33 +12,37 @@ function Profile() {
     console.log('here is', user)
     const [userFirstName, setUserFirstName] = useState(`${user.user.fname}`)
     const [userLastName, setUserLastName] = useState(`${user.user.lname}`)
-    const [userEmail, setUserEmail] = useState(`${user.user.email}`)
     const [userMentor, setUserMentor] = useState(`${user.user.mentor}`)
 
+    function redirect_Chat() {
+        var tID = setTimeout(function () {
+            window.location.href = "/chat";
+            window.clearTimeout(tID);
+            // clear time out.
+        }, 0);
+    }
 
+    const [show, setShow] = useState(false);
+    const handleShow = () => setShow(true);
+    const handleClose = () => {
+        setShow(false);
+        redirect_Chat()
+    }
 
     async function handleUpdate(e) {
         e.preventDefault();
-        const updatedUser = doc(db, 'users', user);
-        
-        await updateDoc(updatedUser, {
+
+        dispatch(actionUpdateUser({
+            ...user.user,
             fname: userFirstName,
             lname: userLastName,
             name: userFirstName + ' ' + userLastName,
-            email: userEmail,
             mentor: userMentor
-        })
-
-
-
-        dispatch(actionUpdateUser(user))
-
-
+        }))
+        handleShow()
     }
 
     return (
-        // value={userName}
-        // onChange={(e) => setUserName(e.target.value)}
         <div className="register__page">
             {/* Logo Image Centered */}
             {/* Header */}
@@ -74,13 +77,13 @@ function Profile() {
                                 </div>
                             </div>
 
-                            <div className="form-row">
+                            {/* <div className="form-row">
                                 <div className="col-md-12 mb-3">
                                     <label className="input__label">E-Mail</label>
                                     <input type="email" className="form-control" id="validationDefault04" value={userEmail}
                                         onChange={(e) => setUserEmail(e.target.value)} />
                                 </div>
-                            </div>
+                            </div> */}
                             {/* <div className="form-row">
                                 <div className="col-md-12 mb-3">
                                     <label className="input__label">Password (6 or more characters)</label>
@@ -101,18 +104,22 @@ function Profile() {
 
 
                             <button onClick={handleUpdate} className="btn register__button col-md-12 mb-3" type="submit" title="Update Profile">Save changes</button>
-
+                            <Modal className="modal" size="md" show={show} onHide={handleClose}>
+                                <Modal.Header className="modal__header" closeButton>
+                                    <Modal.Title className="text-center modal__title">Profile updated successfully! </Modal.Title>
+                                    <br />
+                                    <Button className="modal__button" variant="secondary" onClick={handleClose}>
+                                        Exit
+                                    </Button>
+                                </Modal.Header>
+                            </Modal>
 
                         </form>
                     </div>
                 </div>
-
                 <div className="spacerdiv">
-
                 </div>
-
             </div>
-
         </div>
     )
 }

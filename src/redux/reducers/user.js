@@ -16,7 +16,8 @@ export function user (state = {
             }
         case 'UPDATE_USER':
             return {
-                user: action.object
+                user: action.user,
+                checked: true
             }
         
         default:
