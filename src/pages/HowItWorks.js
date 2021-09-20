@@ -26,7 +26,7 @@ function HowItWorks() {
         <Carousel.Item className="d-flex justify-content-center">
 
           <img
-            className="d-block w-65 "
+            className="d-block w-99 "
             src={tech}
             alt="First slide"
           />
@@ -37,7 +37,7 @@ function HowItWorks() {
         </Carousel.Item>
         <Carousel.Item className="d-flex justify-content-center" >
           <img
-            className="d-block w-65"
+            className="d-block w-99"
             src={collab1}
             alt="Second slide"
           />
@@ -49,7 +49,7 @@ function HowItWorks() {
         </Carousel.Item>
         <Carousel.Item className="d-flex justify-content-center" >
           <img
-            className="d-block w-65"
+            className="d-block w-99"
             src={collab2}
             alt="Third slide"
           />
