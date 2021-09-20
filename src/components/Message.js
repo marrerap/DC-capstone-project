@@ -25,7 +25,7 @@ function Message({message, time}) {
                 <Avatar className="Avatar message__avatar" />
                 <div className="message__info">
                     <p className="message__name">{message.user.name} </p>
-                    <p className="message__time">{message.user.mentor? 'Mentor': 'Mentee'}  &#8226;  Posted <RelativeTime date={time}/></p>
+                    <p className="message__time">{message.user.mentor && message.user.mentor !== "false" ? 'Mentor': 'Mentee'}  &#8226;  Posted <RelativeTime date={time}/></p>
                 </div>
             </div>
             <br/>
