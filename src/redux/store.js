@@ -1,11 +1,12 @@
 import { createStore, combineReducers } from "redux";
 import { messages } from './reducers/messages'
 //  npm install @reduxjs/toolkit react-redux
-import { compose, applyMiddleware } from "@reduxjs/toolkit";
+import {  applyMiddleware } from "@reduxjs/toolkit";
 import thunkMiddleware from 'redux-thunk';
 import { user } from './reducers/user';
 import { channels } from './reducers/channels';
 import { docLinks } from './reducers/docLinks'
+import { composeWithDevTools } from "redux-devtools-extension";
 
 
 // combines all existing reducers into a larger object
@@ -17,8 +18,8 @@ const rootReducer = combineReducers({
 
 })
 
-const middleware = compose(
-    applyMiddleware(thunkMiddleware), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const middleware = composeWithDevTools(
+    applyMiddleware(thunkMiddleware)
 )
 
 export const store = createStore(rootReducer, middleware)
