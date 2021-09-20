@@ -8,13 +8,10 @@ function ChatPage() {
     return (
         <div className="chat__page">
             <ChatNav />
-
             <br/>
             <div className="chatpage__Body">
-                {/* <Channels className="Channels" /> */}
                 <ChatMain className="ChatMain" />
-                {/* <Users className="Users" /> */}
-
+                
             </div>
         </div>
     );
