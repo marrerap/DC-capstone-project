@@ -111,31 +111,31 @@ function RegisterPage() {
                                 <div className=" form-row col  ">
                                     <label className="input__label">First Name</label>
                                     <input type="text" className="form-control" id="validationDefault01" value={fname} onChange={(e) => setFname(e.target.value)} required />
-                                </div>
+                                </div><br/>
                                 <div className="form-row col">
                                     <label className="input__label">Last Name</label>
                                     <input type="text" className="form-control" id="validationDefault02" value={lname} onChange={(e) => setLname(e.target.value)} required />
-                                </div>
+                                </div><br/>
                             {/* </div> */}
 
                             {/* <div className="form-row"> */}
                                 <div className="form-row col">
                                     <label className="input__label">E-Mail</label>
                                     <input type="email" className="form-control" id="validationDefault04" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                                </div>
+                                </div><br/>
                             {/* </div> */}
                             <div className="form-row">
                                 <div className="form-row col">
                                     <label className="input__label">Password (6 or more characters)</label>
                                     <input type="password" className="form-control" id="validationDefault05" minLength="6" value={password}onChange={(e) => setPassword(e.target.value)} required />
                                 </div>
-                            </div>
+                            </div><br/>
                             <div className="form-row d-flex">
                                 {/* <div className="form-row col"> */}
                                     <Form.Select onChange={(e) => setMentor(e.target.value)} aria-label="Default select example" className="Dropdown form-row col">
                                         <option>Account Status</option>
-                                        <option value="true">Register As A Mentor - I Want To Help </option>
-                                        <option value="false">Register As A Mentee - I Need Help</option>
+                                        <option value="true">Register As A Mentor </option>
+                                        <option value="false">Register As A Mentee</option>
                                     </Form.Select>
                                 {/* </div> */}
                             </div>
@@ -173,7 +173,7 @@ function RegisterPage() {
                                 </Modal.Header>
 
                             </Modal>
-                            <p className="input__label text-center">Already on S.M.A.C.? <a className="Sign__In__link" href="/login" title="Sign In Page">Sign In</a></p>
+                            <p className="input__label text-center">Already on S.M.A.C.? <a className="Sign__In__link" href="/login" title="Sign In Page">&nbsp;Sign In</a></p>
                         </form>
              
                 </div>
