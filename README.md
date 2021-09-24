@@ -5,6 +5,7 @@
 ![S.M.A.C. Overflow Home Page](public/LogoSMAC.png)
 
 Check out the project video demo @ https://www.youtube.com/watch?v=nceggCH1oqc
+<br/>
 Check out the live site @ http://smac-overflow.netlify.app 
 
 ## Overview
