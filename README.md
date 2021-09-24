@@ -4,6 +4,9 @@
 
 ![S.M.A.C. Overflow Home Page](public/LogoSMAC.png)
 
+Check out the project video demo @ https://www.youtube.com/watch?v=nceggCH1oqc
+Check out the live site @ http://smac-overflow.netlify.app 
+
 ## Overview
 A chat app that allows Software Developers of all experience levels to come together in a simple to use platform and share their questions and solutions in channels that are based created for specific languages.
 
